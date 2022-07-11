@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/asset/css/custom.css">
+  <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    .image-slider {
+        height: 500px;
+        width: 60%;
+        overflow: hidden;
+    }
+
+    .swiper-slide {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .swiper-slide-inner {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .max-w-screen-custom {
+        max-width: 1150px;
+    }
+  </style>
+</head>
+<body>
+    <!-- START : HEADER -->
+    <header class="w-full overflow-hidden" style="height: 700px;">
+        <nav class="fixed z-20 w-full px-5 text-white">
+            <div class="w-full h-16 max-w-screen-custom mx-auto flex justify-between items-center">
+                <img src="/asset/logo.png" alt="">
+                <div class="w-full flex justify-end">
+                    <!-- MENU ICON -->
+                    <button id="menu-btn" class="flex items-center mr-10 relative">
+                        <span class="uppercase font-medium transition-all duration-300 hover:text-slate-300">Menu</span>
+                        <span class="iconify plus ml-2" data-icon="ant-design:plus-circle-outlined"></span>
+                        <span class="iconify minus ml-2 hidden" data-icon="akar-icons:circle-minus"></span>
+                        <!-- SUBMENU -->
+                        <ul id="menu-dropdown" class="absolute z-20 top-full transform translate-y-2 left-0 w-56 h-auto text-left flex flex-col">
+                            <li class="mt-2">
+                                <a href="#" class="uppercase font-medium hover:underline">About</a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="#" class="uppercase font-medium hover:underline">Material and finishes</a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="#" class="uppercase font-medium hover:underline">Product</a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="#" class="uppercase font-medium hover:underline">Get in touch</a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="#" class="uppercase font-medium hover:underline">Terms of order</a>
+                            </li>
+                        </ul>
+                    </button>
+                    <!-- SEARCH INPUT -->
+                    <input type="text" class="text-white placeholder-white focus:outline-none hover:placeholder-slate-300 text-sm px-2 py-1 border border-white bg-transparent uppercase" placeholder="Search for products">
+                </div>
+            </div>
+        </nav>
+        <div class="relative image-slider-wrapper h-full flex flex-col justify-center">
+            <!-- SWIPER TEXT CONTENT -->
+            <div class="absolute w-full left-1/2 transform -translate-x-1/2 max-w-screen-lg mx-auto z-10 text-white flex flex-col space-y-3 px-5">
+                <div class="pagination">
+                    <a href="#" class="flex items-center text-gray-600">
+                        <span class="font-semibold text-sm uppercase">Home</span>
+                        <span class="iconify text-xs ml-2" data-icon="bi:chevron-right"></span>
+                    </a>
+                </div>
+                <h1 class="text-2xl uppercase font-semibold max-w-md py-5 leading-relaxed md:pr-32">
+                    <a href="#" class="hover:underline">Rangawak is a philosophy which asserts that everyone has the right to have powerfull and durable furniture.</a>
+                </h1>
+                <p class="max-w-md text-sm">Every furniture which is presented at Rangawak is the handicraft of a wood craftsman and is created from the highest quality wood resources. Rangawak started with a desire to make noteworthy furniture using sophisticated methods and executed with captivating results.</p>
+                <a href="#" id="link-with-icon" class="flex items-center text-yellow-700 hover:underline">
+                    <span class="font-semibold text-sm uppercase">View full catalogue</span>
+                    <span class="iconify text-xs ml-2 transition-all duration-300" data-icon="bi:chevron-right"></span>
+                </a>
+            </div>
+            <!-- SWIPER TEXT CONTENT -->
+            <div class="swiper-container image-slider w-full h-full">
+                <div class="swiper-wrapper">
+                    <!-- START : SINGLE IMAGE -->
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-inner" data-swiper-parallax= "50%">
+                            <img src="/asset/img/homepage/headline-homepage-one.png" alt="" class="swiper-lazy w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-inner" data-swiper-parallax= "50%">
+                            <img src="/asset/img/homepage/headline-homepage-two.png" alt="" class="swiper-lazy w-full h-full object-cover object-center md:object-left-bottom">
+                        </div>
+                    </div>
+                    <!-- END : SINGLE IMAGE -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </header>
+    <!-- END : HEADER -->
+    <section class="w-full py-10 flex items-center">
+        <div class="w-full max-w-screen-lg mx-auto px-5 grid grid-cols-1 lg:grid-cols-8">
+            <!-- LEFT CONTENT -->
+            <div class="w-full col-span-1 lg:col-span-5">
+                <h1 class="text-2xl uppercase max-w-lg font-semibold py-5 leading-relaxed">Is a workshop that creates handcrafted living products with wood as the primary material, based in Barulak, Tanah Datar.</h1>
+                <a href="#" id="link-with-icon" class="flex items-centerflex items-center text-yellow-700 hover:underline">
+                    <span class="font-semibold text-sm uppercase">View full background and story</span>
+                    <span class="iconify text-xs ml-2 text-stone-700" data-icon="bi:chevron-right"></span>
+                </a>
+            </div>
+            <!-- RIGHT CONTENT -->
+            <div class="w-full col-span-1 lg:col-span-3 pt-10 lg:pt-0">
+                <div class="w-full">
+                    <h1 class="text-2xl uppercase max-w-xl font-semibold py-5 leading-relaxed">Rangawak uses Surian Red Cedar as its main material and Mahogany as secondary material.</h1>
+                    <p class="text-sm pb-5 leading-relaxed">Every furniture which is presented at Rangawak is the handicraft of a wood craftsman and is created from the highest quality wood resources. Rangawak started with a desire to make noteworthy furniture using sophisticated methods and executed with captivating results.</p>
+                    <a href="#" id="link-with-icon" class="flex items-centerflex items-center text-yellow-700 hover:underline">
+                        <span class="font-semibold text-sm uppercase">Get to know our materials and finishes</span>
+                        <span class="iconify text-xs ml-2" data-icon="bi:chevron-right"></span>
+                    </a>
+                </div>
+                <div class="w-full pt-10">
+                    <h1 class="text-2xl uppercase max-w-xl font-semibold py-5 leading-relaxed">Get in touch.</h1>
+                    <p class="text-sm leading-relaxed pb-5">If you want to inquire about a product, the Rangawak Team is ready to help. Please contact us.</p>
+                    <a href="#" id="link-with-icon" class="flex items-centerflex items-center text-yellow-700 hover:underline">
+                        <span class="font-semibold text-sm uppercase">Get to know our materials and finishes</span>
+                        <span class="iconify text-xs ml-2" data-icon="bi:chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END -->
+
+    <!-- CHAIR IMG -->
+    <div class="w-full">
+        <div class="w-full max-w-screen-custon mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center">
+            <div class="w-full">
+                <img src="/asset/img/homepage/chair-two.png" class="w-full" alt="">
+            </div>
+            <div class="w-full p-10">
+                <img src="/asset/img/homepage/chair-one.png" class="w-full" alt="">
+            </div>
+            <div class="w-full p-20">
+                <img src="/asset/img/homepage/chair-three.png" class="w-full" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- CHAIR IMG -->
+
+    <!-- START : FOOTER -->
+    <footer class="w-full px-5">
+        <div class="w-full max-w-screen-custom mx-auto grid lg:grid-cols-3 py-10">
+            <div class="w-full col-span-1 lg:col-span-2 flex">
+                <div class="w-full">
+                    <p class="font-bold text-sm pb-2 text-slate-900 uppercase">Workshop</p>
+                    <a href="#" class="text-sm">Jalan Lintas Batu Sangkar - Payakumbuh, <br /> Barulak, Tanah Datar, Sumatra Barat, 27821, ID</a>
+                </div>
+                <div class="w-full">
+                    <a href="#" class="text-sm flex">
+                        <span class="font-bold text-slate-900 text-base">P</span>
+                        <span>+62 (852) 7859 0997</span>
+                    </a>
+                    <a href="#" class="text-sm flex">
+                        <span class="font-bold text-slate-900 text-base">E</span>
+                        <span>hello@rangawak.atalier.com</span>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full col-span-1 lg:col-span-1 flex justify-center lg:justify-end pt-5 lg:pt-0">
+                <span class="text-sm">Rangawak atelier</span>
+            </div>
+        </div>
+    </footer>
+    <!-- END : FOOTER -->
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="/asset/js/app.js"></script>
+</body>
+</html>

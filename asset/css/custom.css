@@ -1,0 +1,31 @@
+@media screen and (min-width: 992px) {
+    header, section {
+        max-height: 700px;
+    }
+}
+
+.swiper-button-prev::after, .swiper-button-after::after {
+    content: '';
+    color: #ffffff;
+}
+
+#link-with-icon:hover .iconify {
+    transform: translateX(5px);
+}
+
+/* MENU */
+#menu-btn:hover .plus {
+    display: none;
+}
+#menu-btn:hover .minus {
+    display: block;
+}
+
+#menu-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 500ms ease;
+}
+#menu-btn:hover #menu-dropdown, #menu-dropdown:hover {
+    max-height: 500px;
+}
