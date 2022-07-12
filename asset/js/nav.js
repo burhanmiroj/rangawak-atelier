@@ -15,7 +15,7 @@ window.addEventListener('scroll', function() {
     if(scrollPosition > navbar.clientHeight * 2) {
         const navbarChildrenWrapper = navbar.querySelector('div')
         
-        mobileMenu.classList.add('lg:pt-5')
+        mobileMenu.classList.add('pt-5')
         navbar.classList.add('bg-slate-900')
         navbarChildrenWrapper.classList.replace('h-20', 'h-16')
 
@@ -24,16 +24,23 @@ window.addEventListener('scroll', function() {
             headerLogo.setAttribute('src', '/asset/logo.png')
             mobileMenuBtn.classList.replace('text-slate-900', 'text-slate-100')
 
-            searchProduct.forEach(search => {
-                search.classList.replace('border-slate-900', 'border-slate-300')
-                search.classList.replace('placeholder-slate-900', 'placeholder-slate-300')
-                search.classList.replace('text-slate-900', 'text-slate-300')
-            })
+            // searchProduct.forEach(search => {
+            //     search.classList.replace('border-slate-900', 'border-slate-300')
+            //     search.classList.replace('placeholder-slate-900', 'placeholder-slate-300')
+            //     search.classList.replace('text-slate-900', 'text-slate-300')
+            // })
         }
+
+        // 
+        searchProduct.forEach(search => {
+            search.classList.replace('border-white', 'border-slate-900')
+            search.classList.replace('placeholder-white', 'placeholder-slate-900')
+            search.classList.replace('text-white', 'text-slate-900')
+        })
     } else {
         const navbarChildrenWrapper = navbar.querySelector('div')
         
-        mobileMenu.classList.remove('lg:pt-5')
+        mobileMenu.classList.remove('pt-5')
         navbar.classList.remove('bg-slate-900')
         navbarChildrenWrapper.classList.replace('h-16', 'h-20')
 
@@ -42,12 +49,19 @@ window.addEventListener('scroll', function() {
             headerLogo.setAttribute('src', '/asset/logo-black.png')
             mobileMenuBtn.classList.replace('text-slate-100', 'text-slate-900')
             
-            searchProduct.forEach(search => {
-                search.classList.replace('border-slate-300', 'border-slate-900')
-                search.classList.replace('placeholder-slate-300', 'placeholder-slate-900')
-                search.classList.replace('text-slate-300', 'text-slate-900')
-            })
+            // searchProduct.forEach(search => {
+            //     search.classList.replace('border-slate-900', 'border-slate-300')
+            //     search.classList.replace('placeholder-slate-900', 'placeholder-slate-300')
+            //     search.classList.replace('text-slate-900', 'text-slate-300')
+            // })
         }
+
+        // 
+        searchProduct.forEach(search => {
+            search.classList.replace('border-slate-900', 'border-white')
+            search.classList.replace('placeholder-slate-900', 'placeholder-white')
+            search.classList.replace('text-slate-900', 'text-white')
+        })
     }
 
     if(scrollPosition > 500) {
