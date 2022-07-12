@@ -9,39 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/asset/css/custom.css">
+    <link rel="stylesheet" href="/asset/css/app.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        .image-slider {
-            height: 500px;
-            width: 60%;
-            overflow: hidden;
-        }
-
-        .swiper-slide {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .swiper-slide-inner {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        .max-w-screen-custom {
-            max-width: 1150px;
-        }
-    </style>
 </head>
 <body>
     <!-- START : HEADER -->
-    <div class="w-full overflow-hidden bg-gray-300">
+    <div class="w-full overflow-hidden bg-wood-trush">
         <!-- START : NAVBAR -->
         <nav class="fixed z-20 w-full px-5 text-white transition-all duration-300">
             <div class="w-full h-20 max-w-screen-custom mx-auto flex justify-between items-center transition-all duration-300">
@@ -57,7 +31,7 @@
                             <span class="iconify minus ml-2 hidden" data-icon="akar-icons:circle-minus"></span>
                         </button>
                         <!-- SUBMENU -->
-                        <ul id="menu-dropdown" class="z-30 transition-all duration-300 absolute top-full right-0 lg:left-0 w-56 h-auto text-right flex flex-col justify-start lg:justify-end items-end lg:items-start">
+                        <ul id="menu-dropdown" class="z-30 transition-all duration-300 absolute top-full transform translate-y-2 right-0 lg:left-0 w-56 h-auto text-right flex flex-col justify-start lg:justify-end items-end lg:items-start">
                             <li>
                                 <a href="/about.html" class="uppercase font-semibold hover:underline">About</a>
                             </li>
@@ -84,24 +58,25 @@
             </div>
         </nav>
         <!-- END : NAVBAR -->
-        <div class="w-full max-w-screen-lg mx-auto h-full flex flex-col justify-center px-5 py-40">
+        <div class="w-full max-w-screen-lg mx-auto h-full flex flex-col justify-center px-5 pt-40 pb-20">
             <!-- PAGINATION -->
-            <div class="pagination flex items-center text-gray-600">
+            <div class="pagination flex items-center text-copper-brown">
                 <a href="/index.html" class="flex items-center">
-                    <span class="font-semibold text-sm uppercase hover:underline">Home</span>
+                    <span class="font-bold text-sm uppercase hover:underline">Home</span>
                 </a>
                 <span class="iconify text-xs mx-2" data-icon="bi:chevron-right"></span>
                 <span class="flex items-center">
-                    <span class="font-semibold text-sm uppercase">About</span>
+                    <span class="font-bold text-sm uppercase">About</span>
                 </span>
+                <span class="iconify text-xs mx-2" data-icon="bi:chevron-right"></span>
             </div>
             <!-- TOP -->
             <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-5 pt-20">
                 <!-- LEFT : TEXT CONTENT -->
                 <div class="w-full col-span-1 md:col-span-2">
-                    <h2 data-aos="fade-up" class="text-xl lg:text-2xl text-yellow-700 uppercase font-semibold">About</h2>
-                    <h1 data-aos="fade-up" class="text-xl lg:text-2xl uppercase font-semibold pt-5 leading-relaxed md:pr-32">
-                        <a href="#" class="hover:underline">RANGAWAK IS A WORKSHOP THAT CREATES HANDCRAFTED LIVING PRODUCTS WITH WOOD AS THE PRIMARY MATERIAL, BASED IN BARULAK, TANAH DATAR.</a>
+                    <h2 data-aos="fade-up" class="text-xl lg:text-2xl text-copper-brown uppercase font-bold">About</h2>
+                    <h1 data-aos="fade-up" class="text-xl lg:text-2xl uppercase font-bold pt-5 md:pr-32">
+                        <a href="#" class="hover:underline leading-relaxed">RANGAWAK IS A WORKSHOP THAT CREATES HANDCRAFTED LIVING PRODUCTS WITH WOOD AS THE PRIMARY MATERIAL, BASED IN BARULAK, TANAH DATAR.</a>
                     </h1>
                 </div>
                 <!-- RIGHT : IMAGE -->
@@ -109,7 +84,7 @@
                     <div data-aos="fade-in" class="w-full overflow-hidden">
                         <img src="/asset/img/about/profile.png" class="w-full h-full object-cover transition-all duration-300 transform hover:scale-110" alt="">
                     </div>
-                    <p data-aos="fade-up" data-aos-delay="200" class="pt-5 text-slate-600 text-sm leading-relaxed">Rangawak was founded by Widi, as well as the only founder. Widi began Rangawak five years ago by learning and trying new things. He is the only woodworker in West Sumatera who adopts Japanese techniques.</p>
+                    <p data-aos="fade-up" data-aos-delay="200" class="pt-5 font-medium text-sm leading-relaxed text-justify">Rangawak was founded by Widi, as well as the only founder. Widi began Rangawak five years ago by learning and trying new things. He is the only woodworker in West Sumatera who adopts Japanese techniques.</p>
                 </div>
             </div>
             <!-- CENTER -->
@@ -119,22 +94,22 @@
                     <div data-aos="fade-in" class="w-full overflow-hidden">
                         <img src="/asset/img/about/sketching.png" class="w-full h-full object-cover transition-all duration-300 transform hover:scale-110" alt="">
                     </div>
-                    <p data-aos="fade-up" data-aos-delay="200" class="pt-5 text-slate-600 text-sm leading-relaxed">Rangawak was founded by Widi, as well as the only founder. Widi began Rangawak five years ago by learning and trying new things. He is the only woodworker in West Sumatera who adopts Japanese techniques.</p>
+                    <p data-aos="fade-up" data-aos-delay="200" class="pt-5 font-medium text-sm leading-relaxed text-justify">Rangawak was founded by Widi, as well as the only founder. Widi began Rangawak five years ago by learning and trying new things. He is the only woodworker in West Sumatera who adopts Japanese techniques.</p>
                 </div>
             </div>
             <!-- BOTTOM -->
             <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-5 pt-14 md:pt-5">
                 <!-- LEFT : TEXT CONTENT -->
                 <div class="w-full col-span-1 md:col-span-2">
-                    <h2 data-aos="fade-up" class="text-xl lg:text-2xl text-yellow-700 uppercase font-semibold">Behind the name</h2>
-                    <h1 data-aos="fade-up" class="text-xl lg:text-2xl uppercase font-semibold pt-5 leading-relaxed md:pr-32">
-                        <a href="#" class="hover:underline">THE MINANG PEOPLE ARE WELL-KNOWN FOR THEIR WANDERLUST, WHICH THEY PURSUE BOTH DOMESTICALLY AND OVERSEAS. WITH THE DESIRE TO CHANGE THEIR FATE, SEEK THEIR FORTUNE IN OTHER NATIONS, BELIEVE THAT THERE IS NO DEVELOPMENT IN MINANG LAND, AND A VARIETY OF OTHER REASONS, THEY LEAVE THEIR HOMETOWN.</a>
+                    <h2 data-aos="fade-up" class="text-xl lg:text-2xl text-copper-brown uppercase font-bold">Behind the name</h2>
+                    <h1 data-aos="fade-up" class="text-xl lg:text-2xl uppercase font-bold pt-5 md:pr-32">
+                        <a href="#" class="hover:underline leading-relaxed">THE MINANG PEOPLE ARE WELL-KNOWN FOR THEIR WANDERLUST, WHICH THEY PURSUE BOTH DOMESTICALLY AND OVERSEAS. WITH THE DESIRE TO CHANGE THEIR FATE, SEEK THEIR FORTUNE IN OTHER NATIONS, BELIEVE THAT THERE IS NO DEVELOPMENT IN MINANG LAND, AND A VARIETY OF OTHER REASONS, THEY LEAVE THEIR HOMETOWN.</a>
                     </h1>
                 </div>
                 <!-- RIGHT : IMAGE -->
                 <div class="w-full">
-                    <p data-aos="fade-up" class="pb-5 text-slate-600 text-sm leading-relaxed">Rangawak is a Minang word that translates to "Our People.” The Minang people who choose to settle in their village associate this name with huge goals and self-actualization. Widi, who goes by the name Rangawak, wants all Minang people to be proud of what he has accomplished as a fellow Minang.</p>
-                    <p data-aos="fade-up" class="pb-5 text-slate-600 text-sm leading-relaxed">The Minang language is used not only in the Rangawak brand name, but also in the titles of the wood workshop's items.</p>
+                    <p data-aos="fade-up" class="pb-5 text-slate-600 text-sm leading-relaxed text-justify">Rangawak is a Minang word that translates to "Our People.” The Minang people who choose to settle in their village associate this name with huge goals and self-actualization. Widi, who goes by the name Rangawak, wants all Minang people to be proud of what he has accomplished as a fellow Minang.</p>
+                    <p data-aos="fade-up" class="pb-5 text-slate-600 text-sm leading-relaxed text-justify">The Minang language is used not only in the Rangawak brand name, but also in the titles of the wood workshop's items.</p>
                     <div data-aos="fade-in" data-aos-delay="200" class="w-full overflow-hidden">
                         <img src="/asset/img/about/philosophy.png" class="w-full h-full object-cover transition-all duration-300 transform hover:scale-110" alt="">
                     </div>
