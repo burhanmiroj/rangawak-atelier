@@ -92,18 +92,44 @@
         <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-5 px-5 max-w-screen-lg mx-auto py-20">
             <div class="w-full md:col-start-2">
                 <img data-aos="fade-in" src="/asset/img/material-and-finishes/wood-one.png" class="w-full" alt="">
-                <p data-aos="fade-in" class="text-justify leading-relaxed text-sm pt-5">For Surian Red Cedar wood it has its own uniqueness. This wood has a reddish brown heartwood with pale red sapwood. The texture is moderately coarse. Surian has a definite cedar odor.</p>
+                <p data-aos="fade-in" class="leading-relaxed text-sm pt-5">For Surian Red Cedar wood it has its own uniqueness. This wood has a reddish brown heartwood with pale red sapwood. The texture is moderately coarse. Surian has a definite cedar odor.</p>
             </div>
             <div class="w-full">
                 <img data-aos="fade-in" src="/asset/img/material-and-finishes/wood-two.png" class="w-full" alt="">
-                <p data-aos="fade-in" class="text-justify leading-relaxed text-sm pt-5">Moreover, Mahogany is one of the finest hardwoods. It can be highly figured out, beautiful with its consistent red color and also have a good benchmark for stability. Mahogany wood is usually used for fine furniture, cabinetry, wood carving, flooring and many other uses.</p>
+                <p data-aos="fade-in" class="leading-relaxed text-sm pt-5">Moreover, Mahogany is one of the finest hardwoods. It can be highly figured out, beautiful with its consistent red color and also have a good benchmark for stability. Mahogany wood is usually used for fine furniture, cabinetry, wood carving, flooring and many other uses.</p>
             </div>
         </div>
         <!-- IMG CONTENT -->
-        <div class="w-full max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 pt-20">
+        <div class="w-full max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 pt-10">
             <!-- LEFT : TEXT CONTENT -->
             <div class="w-full col-span-1 md:col-span-2 px-5">
                 <h1 data-aos="fade-up" class="text-xl lg:text-2xl hover:underline uppercase font-bold pt-5 leading-relaxed md:pr-32">Rangawak’s material proceeds with Natural drying and finalizes it with Clear Polyurethane Natural.</h1>
+            </div>
+        </div>
+        <div class="w-full py-10 px-5">
+            <!-- IMAGE SWIPER -->
+            <div class="swiper w-full max-w-screen-2xl mx-auto material-component">
+                <div class="swiper-wrapper">
+                    <div data-aos="fade-up" data-aos-duration="1000" class="swiper-slide w-full border swiper-slide-active" role="group" aria-label="1 / 9">
+                        <img src="/asset/img/material-and-finishes/img-slide-one.png" alt="">
+                    </div>
+                    <div data-aos="fade-down" data-aos-duration="1000" class="swiper-slide w-full border swiper-slide-next" role="group" aria-label="2 / 9">
+                        <img src="/asset/img/material-and-finishes/img-slide-two.png" alt="">
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="1000" class="swiper-slide w-full border" role="group" aria-label="3 / 9">
+                        <img src="/asset/img/material-and-finishes/img-slide-three.png" alt="">
+                    </div>
+                    <div data-aos="fade-down" data-aos-duration="1000" class="swiper-slide w-full border" role="group" aria-label="3 / 9">
+                        <img src="/asset/img/material-and-finishes/img-slide-four.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- CTA -->
+            <div class="pt-10 md:pt-20 text-right md:pr-64">
+                <a data-aos="fade-up" href="/product.html" id="link-with-icon" class="inline-flex items-center text-copper-brown hover:underline mt-3">
+                    <span class="text-sm font-bold uppercase">View full catalogue</span>
+                    <span class="iconify text-xs ml-2 transition-all duration-300" data-icon="bi:chevron-right"></span>
+                </a>
             </div>
         </div>
     </main>
@@ -149,6 +175,18 @@
             autoplay: {
                 delay: 3000
             },
+            breakpoints: {
+                1200: {
+                    slidesPerView: 4,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                562: {
+                    slidesPerView: 1,
+                }
+            },
+            spaceBetween: 20
         });
     </script>
 </body>

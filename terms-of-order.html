@@ -130,16 +130,19 @@
                                     <!-- TOP INPUT -->
                                     <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-5 pb-5">
                                         <div class="w-full">
-                                            <input type="text" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm focus:bg-slate-400 placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent" placeholder="Enter your first name">
+                                            <label for="first_name" class="text-sm uppercase font-bold text-copper-brown pb-1">First Name</label>
+                                            <input type="text" name="first_name" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm focus:bg-slate-400 placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent" placeholder="Enter your first name">
                                         </div>
                                         <div class="w-full">
-                                            <input type="text" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm focus:bg-slate-400 placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent" placeholder="Enter your last name">
+                                            <label for="last_name" class="text-sm uppercase font-bold text-copper-brown pb-1">Last Name</label>
+                                            <input type="text" name="last_name" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm focus:bg-slate-400 placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent" placeholder="Enter your last name">
                                         </div>
                                     </div>
                                     <!-- BOTTOM INPUT -->
                                     <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-5">
                                         <div class="w-full col-span-1 lg:col-span-3">
-                                            <input type="email" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm focus:bg-slate-400 placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent" placeholder="Enter email">
+                                            <label for="email" class="text-sm uppercase font-bold text-copper-brown pb-1">Email</label>
+                                            <input type="email" name="email" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm focus:bg-slate-400 placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent" placeholder="Enter email">
                                         </div>
                                         <div class="w-full col-span-1">
                                             <button type="submit" class="w-full py-1.5 transition-all duration-300 text-sm bg-slate-500 text-white hover:bg-slate-400 rounded-sm">Sign up</button>

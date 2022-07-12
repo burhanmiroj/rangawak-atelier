@@ -16,7 +16,7 @@ window.addEventListener('scroll', function() {
         const navbarChildrenWrapper = navbar.querySelector('div')
         
         mobileMenu.classList.add('pt-5')
-        navbar.classList.add('bg-slate-900')
+        navbar.classList.add('bg-black')
         navbarChildrenWrapper.classList.replace('h-20', 'h-16')
 
         // DARK CONTENT NAVBAR
@@ -28,7 +28,7 @@ window.addEventListener('scroll', function() {
         const navbarChildrenWrapper = navbar.querySelector('div')
         
         mobileMenu.classList.remove('pt-5')
-        navbar.classList.remove('bg-slate-900')
+        navbar.classList.remove('bg-black')
         navbarChildrenWrapper.classList.replace('h-16', 'h-20')
 
         // DARK CONTENT NAVBAR
