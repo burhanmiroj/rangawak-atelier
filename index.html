@@ -9,38 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/asset/css/custom.css">
+    <link rel="stylesheet" href="/asset/css/app.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        .image-slider {
-            height: 500px;
-            width: 60%;
-            overflow: hidden;
-        }
-
-        .swiper-slide {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .swiper-slide-inner {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        .max-w-screen-custom {
-            max-width: 1150px;
-        }
-    </style>
 </head>
 <body>
     <!-- START : HEADER -->
-    <header class="w-full overflow-hidden" style="height: 700px;">
+    <header class="w-full overflow-hidden" style="height: 768px;">
         <!-- START : NAVBAR -->
         <nav class="fixed z-20 w-full px-5 text-white transition-all duration-300">
             <div class="w-full h-20 max-w-screen-custom mx-auto flex justify-between items-center transition-all duration-300">
@@ -51,39 +25,34 @@
                     <!-- MENU ICON -->
                     <div class="flex items-center lg:mr-10 relative">
                         <button id="menu-btn" class="flex items-center">
-                            <span class="uppercase font-medium transition-all duration-300 hover:text-slate-300">Menu</span>
+                            <span class="uppercase font-semibold transition-all duration-300 hover:text-slate-300">Menu</span>
                             <span class="iconify plus ml-2" data-icon="ant-design:plus-circle-outlined"></span>
                             <span class="iconify minus ml-2 hidden" data-icon="akar-icons:circle-minus"></span>
                         </button>
                         <!-- SUBMENU -->
-                        <ul id="menu-dropdown" class="fixed z-30 inset-0 lg:inset-auto transition-all duration-300 bg-slate-900 lg:bg-transparent lg:absolute lg:top-full transform -translate-y-full lg:translate-y-2 left-0 w-full lg:w-56 h-auto text-left flex flex-col justify-center items-center lg:items-start">
-                            <li class="mt-2">
-                                <a href="/about.html" class="uppercase font-medium hover:underline">About</a>
+                        <ul id="menu-dropdown" class="z-30 transition-all duration-300 absolute top-full right-0 lg:left-0 w-56 h-auto text-right flex flex-col justify-start lg:justify-end items-end lg:items-start">
+                            <li>
+                                <a href="/about.html" class="uppercase font-semibold hover:underline">About</a>
                             </li>
-                            <li class="mt-2">
-                                <a href="/material-and-finishes.html" class="uppercase font-medium hover:underline">Material and finishes</a>
+                            <li>
+                                <a href="/material-and-finishes.html" class="uppercase font-semibold hover:underline">Material and finishes</a>
                             </li>
-                            <li class="mt-2">
-                                <a href="/product.html" class="uppercase font-medium hover:underline">Products</a>
+                            <li>
+                                <a href="/product.html" class="uppercase font-semibold hover:underline">Products</a>
                             </li>
-                            <li class="mt-2">
-                                <a href="/get-in-touch.html" class="uppercase font-medium hover:underline">Get in touch</a>
+                            <li>
+                                <a href="/get-in-touch.html" class="uppercase font-semibold hover:underline">Get in touch</a>
                             </li>
-                            <li class="mt-2">
-                                <a href="/terms-of-order.html" class="uppercase font-medium hover:underline">Terms of order</a>
+                            <li>
+                                <a href="/terms-of-order.html" class="uppercase font-semibold hover:underline">Terms of order</a>
                             </li>
                             <li class="mt-5 lg:hidden">
-                                <input type="text" id="search_product" class="text-slate-200 text-center placeholder-slate-400 lg:placeholder-white focus:outline-none hover:placeholder-slate-300 text-sm px-2 py-3 lg:py-1 rounded-sm border border-white bg-transparent uppercase" placeholder="Search for products">
-                            </li>
-                            <li class="mt-2">
-                                <button id="menu-dropdown-closer" class="mt-7 lg:hidden relative transition-all duration-300 hover:bg-slate-700 p-5 rounded-full">
-                                    <span class="iconify text-2xl" data-icon="bytesize:close"></span>
-                                </button>
+                                <input type="text" id="search_product" class="text-slate-200 text-center placeholder-slate-400 lg:placeholder-white focus:outline-none hover:placeholder-slate-300 text-xs px-2 py-3 lg:py-1 rounded-sm border border-white bg-transparent uppercase" placeholder="Search for products">
                             </li>
                         </ul>
                     </div>
                     <!-- SEARCH INPUT -->
-                    <input type="text" id="search_product" class="hidden lg:flex text-white placeholder-white focus:outline-none hover:placeholder-slate-300 text-sm px-2 py-1 border border-white bg-transparent uppercase" placeholder="Search for products">
+                    <input type="text" id="search_product" class="hidden lg:flex w-56 text-white placeholder-white focus:outline-none hover:placeholder-slate-100 text-xs px-2 py-1 border border-white bg-transparent uppercase" placeholder="Search for products">
                 </div>
             </div>
         </nav>
@@ -91,7 +60,7 @@
         <div class="relative image-slider-wrapper h-full flex flex-col justify-center">
             <!-- SWIPER TEXT CONTENT -->
             <div class="absolute w-full left-1/2 transform -translate-x-1/2 max-w-screen-lg mx-auto z-10 text-white flex flex-col space-y-3 px-5">
-                <div data-aos="fade-up" class="pagination flex items-center text-gray-600">
+                <div data-aos="fade-up" class="pagination flex items-center text-copper-brown">
                     <a href="/index.html" class="flex items-center">
                         <span class="font-semibold text-sm uppercase hover:underline">Home</span>
                     </a>
@@ -102,8 +71,8 @@
                 </h1>
                 <div data-aos="fade-up">
                     <p class="max-w-md text-sm text-slate-50 pb-5">Every furniture which is presented at Rangawak is the handicraft of a wood craftsman and is created from the highest quality wood resources. Rangawak started with a desire to make noteworthy furniture using sophisticated methods and executed with captivating results.</p>
-                    <a href="#" id="link-with-icon" class="inline-flex items-center text-gray-200 lg:text-yellow-700 hover:underline">
-                        <span class="font-semibold text-sm uppercase">View full catalogue</span>
+                    <a href="#" id="link-with-icon" class="text-copper-brown inline-flex items-center hover:underline">
+                        <span class="font-bold text-sm uppercase">View full catalogue</span>
                         <span class="iconify text-xs ml-2 transition-all duration-300" data-icon="bi:chevron-right"></span>
                     </a>
                 </div>
@@ -200,7 +169,7 @@
                 </div>
             </div>
             <div class="w-full col-span-1 lg:col-span-1 flex lg:justify-end pt-10 lg:pt-0">
-                <span class="text-sm">Rangawak atelier</span>
+                <img src="/asset/footer-logo.png" class="w-32 h-fit" alt="">
             </div>
         </div>
     </footer>

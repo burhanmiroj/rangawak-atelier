@@ -12,7 +12,7 @@ const imageSwiper = new Swiper('.image-slider', {
         loadPrevNext: true,
   },
   autoplay: {
-      delay: 3000
+      delay: 4000
   },
   navigation: {
     nextEl: '.swiper-button-next',

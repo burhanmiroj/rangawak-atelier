@@ -1,5 +1,4 @@
 const mobileMenuBtn = document.querySelector('#menu-btn')
-const mobileMenuCloseBtn = document.querySelector('#menu-dropdown-closer')
 const mobileMenu = document.querySelector('#menu-dropdown')
 const navbar = document.querySelector('nav')
 const mobileMenuLink = document.querySelectorAll('#menu-dropdown li a')
@@ -7,9 +6,6 @@ const searchProduct = document.querySelectorAll('#search_product')
 
 mobileMenuBtn.addEventListener('click', function() {
     mobileMenu.classList.remove('-translate-y-full')
-})
-mobileMenuCloseBtn.addEventListener('click', function() {
-    mobileMenu.classList.add('-translate-y-full')
 })
 
 window.addEventListener('scroll', function() {
