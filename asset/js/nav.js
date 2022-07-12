@@ -52,11 +52,11 @@ window.addEventListener('scroll', function() {
 
     if(scrollPosition > 500) {
         mobileMenuLink.forEach(link => {
-            link.classList.add('lg:text-slate-600')
+            link.classList.add('text-slate-600')
         })
     } else {
         mobileMenuLink.forEach(link => {
-            link.classList.remove('lg:text-slate-600')
+            link.classList.remove('text-slate-600')
         })
     }
 })
