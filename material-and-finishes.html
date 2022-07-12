@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/asset/css/custom.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -40,23 +41,23 @@
 </head>
 <body>
     <!-- START : HEADER -->
-    <header class="w-full overflow-hidden" style="height: 700px;">
+    <header class="w-full overflow-hidden">
         <!-- START : NAVBAR -->
-        <nav class="fixed z-20 w-full px-5 text-white transition-all duration-300">
+        <nav class="dark-content fixed z-20 w-full px-5 text-slate-700 transition-all duration-300">
             <div class="w-full h-20 max-w-screen-custom mx-auto flex justify-between items-center transition-all duration-300">
                 <a href="/index.html">
-                    <img src="/asset/logo.png" class="w-20 md:w-28" alt="Rangawak LOGO">
+                    <img src="/asset/logo-black.png" class="w-20 md:w-28 transition-all duration-300" alt="Rangawak LOGO">
                 </a>
                 <div class="w-full flex justify-end">
                     <!-- MENU ICON -->
                     <div class="flex items-center lg:mr-10 relative">
-                        <button id="menu-btn" class="flex items-center">
-                            <span class="uppercase font-medium transition-all duration-300 hover:text-slate-300">Menu</span>
+                        <button id="menu-btn" class="flex items-center text-slate-900">
+                            <span class="uppercase font-medium transition-all duration-300">Menu</span>
                             <span class="iconify plus ml-2" data-icon="ant-design:plus-circle-outlined"></span>
                             <span class="iconify minus ml-2 hidden" data-icon="akar-icons:circle-minus"></span>
                         </button>
                         <!-- SUBMENU -->
-                        <ul id="menu-dropdown" class="fixed z-30 inset-0 lg:inset-auto transition-all duration-300 bg-slate-900 lg:bg-transparent lg:absolute lg:top-full transform -translate-y-full lg:translate-y-2 left-0 w-full lg:w-56 h-auto text-left flex flex-col justify-center items-center lg:items-start">
+                        <ul id="menu-dropdown" class="fixed z-30 text-slate-100 lg:text-slate-900 inset-0 lg:inset-auto transition-all duration-300 bg-slate-900 lg:bg-transparent lg:absolute lg:top-full transform -translate-y-full lg:translate-y-2 left-0 w-full lg:w-56 h-auto text-left flex flex-col justify-center items-center lg:items-start">
                             <li class="mt-2">
                                 <a href="/about.html" class="uppercase font-medium hover:underline">About</a>
                             </li>
@@ -83,103 +84,32 @@
                         </ul>
                     </div>
                     <!-- SEARCH INPUT -->
-                    <input type="text" id="search_product" class="hidden lg:flex text-white placeholder-white focus:outline-none hover:placeholder-slate-300 text-sm px-2 py-1 border border-white bg-transparent uppercase" placeholder="Search for products">
+                    <input type="text" id="search_product" class="hidden lg:flex text-slate-900 placeholder-slate-900 focus:outline-none hover:placeholder-slate-600 text-sm px-2 py-1 border border-slate-900 bg-transparent uppercase" placeholder="Search for products">
                 </div>
             </div>
         </nav>
         <!-- END : NAVBAR -->
-        <div class="relative image-slider-wrapper h-full flex flex-col justify-center">
-            <!-- SWIPER TEXT CONTENT -->
-            <div class="absolute w-full left-1/2 transform -translate-x-1/2 max-w-screen-lg mx-auto z-10 text-white flex flex-col space-y-3 px-5">
-                <div data-aos="fade-up" class="pagination flex items-center text-gray-600">
-                    <a href="/index.html" class="flex items-center">
-                        <span class="font-semibold text-sm uppercase hover:underline">Home</span>
-                    </a>
-                    <span class="iconify text-xs mx-2" data-icon="bi:chevron-right"></span>
-                </div>
-                <h1 data-aos="fade-up" class="text-xl lg:text-2xl uppercase font-semibold max-w-md py-5 leading-relaxed md:pr-32">
-                    <a href="#" class="hover:underline">Rangawak is a philosophy which asserts that everyone has the right to have powerfull and durable furniture.</a>
-                </h1>
-                <div data-aos="fade-up">
-                    <p class="max-w-md text-sm text-slate-50 pb-5">Every furniture which is presented at Rangawak is the handicraft of a wood craftsman and is created from the highest quality wood resources. Rangawak started with a desire to make noteworthy furniture using sophisticated methods and executed with captivating results.</p>
-                    <a href="#" id="link-with-icon" class="inline-flex items-center text-gray-200 lg:text-yellow-700 hover:underline">
-                        <span class="font-semibold text-sm uppercase">View full catalogue</span>
-                        <span class="iconify text-xs ml-2 transition-all duration-300" data-icon="bi:chevron-right"></span>
-                    </a>
+        <!--  -->
+        <div class="w-full max-w-screen-lg mx-auto h-full flex flex-col justify-center px-5 pt-40 pb-16">
+            <!-- TOP -->
+            <div class="w-full">
+                <div class="w-full flex flex-col md:flex-row items-center justify-between">
+                    <div data-aos="fade-up" class="pagination flex items-center text-gray-600 w-full">
+                        <a href="/index.html" class="flex items-center">
+                            <span class="font-semibold text-sm uppercase hover:underline">Home</span>
+                        </a>
+                        <span class="iconify text-xs mx-2" data-icon="bi:chevron-right"></span>
+                        <span class="flex items-center">
+                            <span class="font-semibold text-sm uppercase">Material and finishes</span>
+                        </span>
+                    </div>
                 </div>
             </div>
-            <!-- SWIPER TEXT CONTENT -->
-            <div class="swiper-container image-slider w-full h-full">
-                <div class="swiper-wrapper">
-                    <!-- START : SINGLE IMAGE -->
-                    <div class="swiper-slide">
-                        <div class="swiper-slide-inner" data-swiper-parallax= "50%">
-                            <img src="/asset/img/homepage/headline-homepage-one.png" alt="" class="swiper-lazy w-full h-full object-cover">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="swiper-slide-inner" data-swiper-parallax= "50%">
-                            <img src="/asset/img/homepage/headline-homepage-two.png" alt="" class="swiper-lazy w-full h-full object-cover object-center md:object-left-bottom">
-                        </div>
-                    </div>
-                    <!-- END : SINGLE IMAGE -->
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
+            <!-- START : SINGLE PRODUCT -->
         </div>
     </header>
     <!-- END : HEADER -->
-    <section class="w-full py-10 flex items-center">
-        <div class="w-full max-w-screen-lg mx-auto px-5 grid grid-cols-1 lg:grid-cols-8">
-            <!-- LEFT CONTENT -->
-            <div class="w-full col-span-1 lg:col-span-5">
-                <h1 data-aos="fade-up" class="text-lg lg:text-2xl uppercase max-w-lg font-semibold py-5 leading-relaxed">Is a workshop that creates handcrafted living products with wood as the primary material, based in Barulak, Tanah Datar.</h1>
-                <a data-aos="fade-up" data-aos-delay="200" href="#" id="link-with-icon" class="flex items-centerflex items-center text-yellow-700 hover:underline">
-                    <span class="font-semibold text-sm uppercase">View full background and story</span>
-                    <span class="iconify text-xs ml-2" data-icon="bi:chevron-right"></span>
-                </a>
-            </div>
-            <!-- RIGHT CONTENT -->
-            <div class="w-full col-span-1 lg:col-span-3 pt-10 lg:pt-0">
-                <div class="w-full">
-                    <h1 data-aos="fade-up" data-aos-delay="200" class="text-lg lg:text-2xl uppercase max-w-xl font-semibold py-5 leading-relaxed">Rangawak uses Surian Red Cedar as its main material and Mahogany as secondary material.</h1>
-                    <p data-aos="fade-up" data-aos-delay="300" class="text-sm pb-5 leading-relaxed text-slate-600">Every furniture which is presented at Rangawak is the handicraft of a wood craftsman and is created from the highest quality wood resources. Rangawak started with a desire to make noteworthy furniture using sophisticated methods and executed with captivating results.</p>
-                    <a data-aos="fade-up" data-aos-delay="400" href="#" id="link-with-icon" class="flex items-centerflex items-center text-yellow-700 hover:underline">
-                        <span class="font-semibold text-sm uppercase">Get to know our materials and finishes</span>
-                        <span class="iconify text-xs ml-2" data-icon="bi:chevron-right"></span>
-                    </a>
-                </div>
-                <div class="w-full pt-10">
-                    <h1 data-aos="fade-up" class="text-lg lg:text-2xl uppercase max-w-xl font-semibold py-5 leading-relaxed">Get in touch.</h1>
-                    <p data-aos="fade-up" data-aos-delay="200" class="text-sm leading-relaxed pb-5 text-slate-600">If you want to inquire about a product, the Rangawak Team is ready to help. Please contact us.</p>
-                    <a data-aos="fade-up" data-aos-delay="400" href="#" id="link-with-icon" class="flex items-centerflex items-center text-yellow-700 hover:underline">
-                        <span class="font-semibold text-sm uppercase">Get to know our materials and finishes</span>
-                        <span class="iconify text-xs ml-2" data-icon="bi:chevron-right"></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END -->
-
-    <!-- CHAIR IMG -->
-    <div class="w-full">
-        <div class="w-full max-w-screen-custom mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center">
-            <div data-aos="fade-up" data-aos-delay="200" class="w-full">
-                <img src="/asset/img/homepage/chair-two.png" class="w-full" alt="">
-            </div>
-            <div data-aos="fade-up" data-aos-delay="400" class="w-full p-10">
-                <img src="/asset/img/homepage/chair-one.png" class="w-full" alt="">
-            </div>
-            <div data-aos="fade-up" data-aos-delay="600" class="w-full p-20">
-                <img src="/asset/img/homepage/chair-three.png" class="w-full" alt="">
-            </div>
-        </div>
-    </div>
-    <!-- CHAIR IMG -->
-
+    
     <!-- START : FOOTER -->
     <footer class="w-full px-5">
         <div class="w-full max-w-screen-custom mx-auto grid grid-cols-1 lg:grid-cols-3 py-10">
@@ -209,7 +139,9 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/asset/js/app.js"></script>
     <script src="/asset/js/nav.js"></script>
+    <script>
+        AOS.init()
+    </script>
 </body>
 </html>
