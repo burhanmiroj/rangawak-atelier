@@ -9,35 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/asset/css/custom.css">
+    <link rel="stylesheet" href="/asset/css/app.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        .image-slider {
-            height: 500px;
-            width: 60%;
-            overflow: hidden;
-        }
-
-        .swiper-slide {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .swiper-slide-inner {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        .max-w-screen-custom {
-            max-width: 1150px;
-        }
-    </style>
 </head>
 <body>
     <!-- START : HEADER -->
@@ -52,7 +26,7 @@
                     <!-- MENU ICON -->
                     <div class="flex items-center lg:mr-10 relative">
                         <button id="menu-btn" class="flex items-center">
-                            <span class="uppercase font-semibold transition-all duration-300 hover:text-slate-400">Menu</span>
+                            <span class="uppercase font-semibold transition-all duration-300">Menu</span>
                             <span class="iconify plus ml-2" data-icon="ant-design:plus-circle-outlined"></span>
                             <span class="iconify minus ml-2 hidden" data-icon="akar-icons:circle-minus"></span>
                         </button>
@@ -89,13 +63,13 @@
             <!-- TOP -->
             <div class="w-full grid grid-cols-1 lg:grid-cols-4 gap-5">
                 <div class="w-full">
-                    <div data-aos="fade-in" class="pagination flex items-center text-gray-600">
+                    <div data-aos="fade-in" class="pagination flex items-center text-copper-brown">
                         <a href="/index.html" class="flex items-center">
-                            <span class="font-semibold text-sm uppercase hover:underline">Home</span>
+                            <span class="font-bold text-sm uppercase hover:underline">Home</span>
                         </a>
                         <span class="iconify text-xs mx-2" data-icon="bi:chevron-right"></span>
                         <span class="flex items-center">
-                            <span class="font-semibold text-sm uppercase">Get in touch</span>
+                            <span class="font-bold text-sm uppercase">Get in touch</span>
                         </span>
                     </div>
                     <p data-aos="fade-up" class="text-sm pt-10 leading-relaxed w-72">If you want to inquire about a product, The Rangawak Team ready to help. <br /> Please contact us.</p>
@@ -146,7 +120,7 @@
         <!-- BOTTOM -->
         <div class="w-full max-w-screen-lg mx-auto grid grid-cols-1 lg:grid-cols-4 gap-5 px-5 pt-16">
             <div class="w-full col-span-1">
-                <p data-aos="fade-up" class="text-sm leading-relaxed text-slate-600">Find us on Google Maps, Waze, or your favourite map apps on your computer or phone.</p>
+                <p data-aos="fade-up" class="text-sm leading-relaxed text-black">Find us on Google Maps, Waze, or your favourite map apps on your computer or phone.</p>
             </div>
             <div data-aos="fade-up" data-aos-delay="200" class="w-full col-span-1 lg:col-span-3 lg:col-start-2">
                 <iframe class="w-full rounded-md" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d143307.9088471542!2d100.5498574897384!3d-0.26378390307812744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd53589cc363e65%3A0x963333680b320ed6!2sJl.%20Raya%20Batusangkar-Payakumbuh%2C%20Barulak%2C%20Kec.%20Tj.%20Baru%2C%20Kabupaten%20Tanah%20Datar%2C%20Sumatera%20Barat!5e0!3m2!1sid!2sid!4v1657586195121!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -184,6 +158,7 @@
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/asset/js/nav.js"></script>
+    <script src="/asset/js/back-to-top-btn.js"></script>
     <script>
         AOS.init()
     </script>
