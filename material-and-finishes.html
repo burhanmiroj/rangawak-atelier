@@ -9,39 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/asset/css/custom.css">
+    <link rel="stylesheet" href="/asset/css/app.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        .image-slider {
-            height: 500px;
-            width: 60%;
-            overflow: hidden;
-        }
-
-        .swiper-slide {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .swiper-slide-inner {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        .max-w-screen-custom {
-            max-width: 1150px;
-        }
-    </style>
 </head>
 <body>
     <!-- START : HEADER -->
-    <header class="w-full overflow-hidden">
+    <header class="w-full overflow-hidden relative" style="height: 768px;">
         <!-- START : NAVBAR -->
         <nav class="dark-content fixed z-20 w-full px-5 text-slate-700 transition-all duration-300">
             <div class="w-full h-20 max-w-screen-custom mx-auto flex justify-between items-center transition-all duration-300">
@@ -51,13 +25,13 @@
                 <div class="w-full flex justify-end">
                     <!-- MENU ICON -->
                     <div class="flex items-center lg:mr-10 relative">
-                        <button id="menu-btn" class="flex items-center text-slate-900">
+                        <button id="menu-btn" class="flex items-center text-slate-100">
                             <span class="uppercase font-medium transition-all duration-300">Menu</span>
                             <span class="iconify plus ml-2" data-icon="ant-design:plus-circle-outlined"></span>
                             <span class="iconify minus ml-2 hidden" data-icon="akar-icons:circle-minus"></span>
                         </button>
                         <!-- SUBMENU -->
-                        <ul id="menu-dropdown" class="fixed z-30 text-slate-100 lg:text-slate-900 inset-0 lg:inset-auto transition-all duration-300 bg-slate-900 lg:bg-transparent lg:absolute lg:top-full transform -translate-y-full lg:translate-y-2 left-0 w-full lg:w-56 h-auto text-left flex flex-col justify-center items-center lg:items-start">
+                        <ul id="menu-dropdown" class="fixed z-30 text-slate-100 inset-0 lg:inset-auto transition-all duration-300 bg-slate-900 lg:bg-transparent lg:absolute lg:top-full transform -translate-y-full lg:translate-y-2 left-0 w-full lg:w-56 h-auto text-left flex flex-col justify-center items-center lg:items-start">
                             <li class="mt-2">
                                 <a href="/about.html" class="uppercase font-medium hover:underline">About</a>
                             </li>
@@ -89,12 +63,12 @@
             </div>
         </nav>
         <!-- END : NAVBAR -->
-        <!--  -->
-        <div class="w-full max-w-screen-lg mx-auto h-full flex flex-col justify-center px-5 pt-40 pb-16">
+        <video src="/asset/materials-and-finishes.mov" autoplay loop class="w-full absolute -z-10"></video>
+        <div class="w-full max-w-screen-lg mx-auto pt-40 pb-16">
             <!-- TOP -->
             <div class="w-full">
                 <div class="w-full flex flex-col md:flex-row items-center justify-between">
-                    <div data-aos="fade-up" class="pagination flex items-center text-gray-600 w-full">
+                    <div data-aos="fade-up" class="pagination flex items-center text-copper-brown w-full">
                         <a href="/index.html" class="flex items-center">
                             <span class="font-semibold text-sm uppercase hover:underline">Home</span>
                         </a>
@@ -102,6 +76,7 @@
                         <span class="flex items-center">
                             <span class="font-semibold text-sm uppercase">Material and finishes</span>
                         </span>
+                        <span class="iconify text-xs mx-2" data-icon="bi:chevron-right"></span>
                     </div>
                 </div>
             </div>
@@ -109,7 +84,17 @@
         </div>
     </header>
     <!-- END : HEADER -->
-    
+    <main class="w-full">
+        <div class="w-full max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 pt-20">
+            <!-- LEFT : TEXT CONTENT -->
+            <div class="w-full col-span-1 md:col-span-2">
+                <h2 data-aos="fade-up" class="text-xl lg:text-2xl text-yellow-700 uppercase font-semibold">About</h2>
+                <h1 data-aos="fade-up" class="text-xl lg:text-2xl uppercase font-semibold pt-5 leading-relaxed md:pr-40">
+                    <a href="#" class="hover:underline">Rangawak uses Surian Red Cedar as its main material and Mahogany as secondary material.</a>
+                </h1>
+            </div>
+        </div>
+    </main>
     <!-- START : FOOTER -->
     <footer class="w-full px-5">
         <div class="w-full max-w-screen-custom mx-auto grid grid-cols-1 lg:grid-cols-3 py-10">
