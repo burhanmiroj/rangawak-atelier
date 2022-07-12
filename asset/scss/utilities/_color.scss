@@ -2,6 +2,9 @@ $wood_trush : #dcd8d4;
 $copper_brown : #867e5d;
 $cloud_dancer : #140702;
 
+.bg-wood-trush {
+    background-color: $wood_trush;
+}
 .text-wood-trush {
     color: $wood_trush;
 }
