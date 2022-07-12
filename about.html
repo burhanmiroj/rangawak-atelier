@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/asset/css/custom.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .image-slider {
+            height: 500px;
+            width: 60%;
+            overflow: hidden;
+        }
+
+        .swiper-slide {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .swiper-slide-inner {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .max-w-screen-custom {
+            max-width: 1150px;
+        }
+    </style>
+</head>
+<body>
+    <!-- START : HEADER -->
+    <div class="w-full overflow-hidden bg-gray-300">
+        <!-- START : NAVBAR -->
+        <nav class="fixed z-20 w-full px-5 text-white transition-all duration-300">
+            <div class="w-full h-20 max-w-screen-custom mx-auto flex justify-between items-center transition-all duration-300">
+                <a href="/index.html">
+                    <img src="/asset/logo.png" class="w-20 md:w-28" alt="Rangawak LOGO">
+                </a>
+                <div class="w-full flex justify-end">
+                    <!-- MENU ICON -->
+                    <div class="flex items-center lg:mr-10 relative">
+                        <button id="menu-btn" class="flex items-center">
+                            <span class="uppercase font-medium transition-all duration-300 hover:text-slate-300">Menu</span>
+                            <span class="iconify plus ml-2" data-icon="ant-design:plus-circle-outlined"></span>
+                            <span class="iconify minus ml-2 hidden" data-icon="akar-icons:circle-minus"></span>
+                        </button>
+                        <!-- SUBMENU -->
+                        <ul id="menu-dropdown" class="fixed z-30 inset-0 lg:inset-auto transition-all duration-300 bg-slate-900 lg:bg-transparent lg:absolute lg:top-full transform -translate-y-full lg:translate-y-2 left-0 w-full lg:w-56 h-auto text-left flex flex-col justify-center items-center lg:items-start">
+                            <li class="mt-2">
+                                <a href="/about.html" class="uppercase font-medium hover:underline">About</a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="/material-and-finishes.html" class="uppercase font-medium hover:underline">Material and finishes</a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="/product.html" class="uppercase font-medium hover:underline">Products</a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="/get-in-touch.html" class="uppercase font-medium hover:underline">Get in touch</a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="/terms-of-order.html" class="uppercase font-medium hover:underline">Terms of order</a>
+                            </li>
+                            <li class="mt-5 lg:hidden">
+                                <input type="text" id="search_product" class="text-slate-200 text-center placeholder-slate-400 lg:placeholder-white focus:outline-none hover:placeholder-slate-300 text-sm px-2 py-3 lg:py-1 rounded-sm border border-white bg-transparent uppercase" placeholder="Search for products">
+                            </li>
+                            <li class="mt-2">
+                                <button id="menu-dropdown-closer" class="mt-7 lg:hidden relative transition-all duration-300 hover:bg-slate-700 p-5 rounded-full">
+                                    <span class="iconify text-2xl" data-icon="bytesize:close"></span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- SEARCH INPUT -->
+                    <input type="text" id="search_product" class="hidden lg:flex text-white placeholder-white focus:outline-none hover:placeholder-slate-100 text-sm px-2 py-1 border border-white bg-transparent uppercase" placeholder="Search for products">
+                </div>
+            </div>
+        </nav>
+        <!-- END : NAVBAR -->
+        <div class="w-full max-w-screen-lg mx-auto h-full flex flex-col justify-center px-5 py-40">
+            <!-- PAGINATION -->
+            <div class="pagination flex items-center text-gray-600">
+                <a href="/index.html" class="flex items-center">
+                    <span class="font-semibold text-sm uppercase hover:underline">Home</span>
+                </a>
+                <span class="iconify text-xs mx-2" data-icon="bi:chevron-right"></span>
+                <span class="flex items-center">
+                    <span class="font-semibold text-sm uppercase">About</span>
+                </span>
+            </div>
+            <!-- TOP -->
+            <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-5 pt-20">
+                <!-- LEFT : TEXT CONTENT -->
+                <div class="w-full col-span-1 md:col-span-2">
+                    <h2 data-aos="fade-up" class="text-xl lg:text-2xl text-yellow-700 uppercase font-semibold">About</h2>
+                    <h1 data-aos="fade-up" class="text-xl lg:text-2xl uppercase font-semibold pt-5 leading-relaxed md:pr-32">
+                        <a href="#" class="hover:underline">RANGAWAK IS A WORKSHOP THAT CREATES HANDCRAFTED LIVING PRODUCTS WITH WOOD AS THE PRIMARY MATERIAL, BASED IN BARULAK, TANAH DATAR.</a>
+                    </h1>
+                </div>
+                <!-- RIGHT : IMAGE -->
+                <div class="w-full">
+                    <div data-aos="fade-in" class="w-full overflow-hidden">
+                        <img src="/asset/img/about/profile.png" class="w-full h-full object-cover transition-all duration-300 transform hover:scale-110" alt="">
+                    </div>
+                    <p data-aos="fade-up" data-aos-delay="200" class="pt-5 text-slate-600 text-sm leading-relaxed">Rangawak was founded by Widi, as well as the only founder. Widi began Rangawak five years ago by learning and trying new things. He is the only woodworker in West Sumatera who adopts Japanese techniques.</p>
+                </div>
+            </div>
+            <!-- CENTER -->
+            <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-5">
+                <!-- CENTER : IMAGE -->
+                <div class="w-full col-span-1 md:col-start-2 transform md:-translate-x-20 md:-translate-y-32 pt-10">
+                    <div data-aos="fade-in" class="w-full overflow-hidden">
+                        <img src="/asset/img/about/sketching.png" class="w-full h-full object-cover transition-all duration-300 transform hover:scale-110" alt="">
+                    </div>
+                    <p data-aos="fade-up" data-aos-delay="200" class="pt-5 text-slate-600 text-sm leading-relaxed">Rangawak was founded by Widi, as well as the only founder. Widi began Rangawak five years ago by learning and trying new things. He is the only woodworker in West Sumatera who adopts Japanese techniques.</p>
+                </div>
+            </div>
+            <!-- BOTTOM -->
+            <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-5 pt-14 md:pt-5">
+                <!-- LEFT : TEXT CONTENT -->
+                <div class="w-full col-span-1 md:col-span-2">
+                    <h2 data-aos="fade-up" class="text-xl lg:text-2xl text-yellow-700 uppercase font-semibold">Behind the name</h2>
+                    <h1 data-aos="fade-up" class="text-xl lg:text-2xl uppercase font-semibold pt-5 leading-relaxed md:pr-32">
+                        <a href="#" class="hover:underline">THE MINANG PEOPLE ARE WELL-KNOWN FOR THEIR WANDERLUST, WHICH THEY PURSUE BOTH DOMESTICALLY AND OVERSEAS. WITH THE DESIRE TO CHANGE THEIR FATE, SEEK THEIR FORTUNE IN OTHER NATIONS, BELIEVE THAT THERE IS NO DEVELOPMENT IN MINANG LAND, AND A VARIETY OF OTHER REASONS, THEY LEAVE THEIR HOMETOWN.</a>
+                    </h1>
+                </div>
+                <!-- RIGHT : IMAGE -->
+                <div class="w-full">
+                    <p data-aos="fade-up" class="pb-5 text-slate-600 text-sm leading-relaxed">Rangawak is a Minang word that translates to "Our People.” The Minang people who choose to settle in their village associate this name with huge goals and self-actualization. Widi, who goes by the name Rangawak, wants all Minang people to be proud of what he has accomplished as a fellow Minang.</p>
+                    <p data-aos="fade-up" class="pb-5 text-slate-600 text-sm leading-relaxed">The Minang language is used not only in the Rangawak brand name, but also in the titles of the wood workshop's items.</p>
+                    <div data-aos="fade-in" data-aos-delay="200" class="w-full overflow-hidden">
+                        <img src="/asset/img/about/philosophy.png" class="w-full h-full object-cover transition-all duration-300 transform hover:scale-110" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END : HEADER -->
+    
+    <!-- START : FOOTER -->
+    <footer class="w-full px-5">
+        <div class="w-full max-w-screen-custom mx-auto grid grid-cols-1 lg:grid-cols-3 py-10">
+            <div class="w-full col-span-1 lg:col-span-2 flex flex-col lg:flex-row">
+                <div class="w-full lg:w-1/2">
+                    <p class="font-bold text-sm pb-2 text-slate-900 uppercase">Workshop</p>
+                    <a href="#" class="text-sm">Jalan Lintas Batu Sangkar - Payakumbuh, <br /> Barulak, Tanah Datar, Sumatra Barat, 27821, ID</a>
+                </div>
+                <div class="w-full lg:w-1/2 mt-5 lg:mt-0">
+                    <a href="#" class="text-sm flex">
+                        <span class="font-bold text-slate-900 text-base mr-2">P</span>
+                        <span>+62 (852) 7859 0997</span>
+                    </a>
+                    <a href="#" class="text-sm flex">
+                        <span class="font-bold text-slate-900 text-base mr-2">E</span>
+                        <span>hello@rangawak.atalier.com</span>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full col-span-1 lg:col-span-1 flex lg:justify-end pt-10 lg:pt-0">
+                <span class="text-sm">Rangawak atelier</span>
+            </div>
+        </div>
+    </footer>
+    <!-- END : FOOTER -->
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/asset/js/nav.js"></script>
+    <script>
+        AOS.init()
+    </script>
+</body>
+</html>

@@ -1,8 +1,7 @@
-var $Speed = 1000;
-
-var imageSwiper = new Swiper('.image-slider', {
+AOS.init();
+const imageSwiper = new Swiper('.image-slider', {
   mousewheel: true,
-  speed: $Speed,
+  speed: 1000,
   loop: true, // Not recommended to enable!!!
   longSwipesRatio: 0.01,
   followFinger: false,
@@ -10,8 +9,11 @@ var imageSwiper = new Swiper('.image-slider', {
   watchSlidesProgress: true,
   parallax: true,
   lazy: {
-		loadPrevNext: true,
-	},
+        loadPrevNext: true,
+  },
+  autoplay: {
+      delay: 3000
+  },
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',

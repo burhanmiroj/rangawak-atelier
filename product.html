@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/asset/css/custom.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .image-slider {
+            height: 500px;
+            width: 60%;
+            overflow: hidden;
+        }
+
+        .swiper-slide {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .swiper-slide-inner {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .max-w-screen-custom {
+            max-width: 1150px;
+        }
+    </style>
+</head>
+<body>
+    <!-- START : HEADER -->
+    <header class="w-full overflow-hidden">
+        <!-- START : NAVBAR -->
+        <nav class="dark-content fixed z-20 w-full px-5 text-slate-700 transition-all duration-300">
+            <div class="w-full h-20 max-w-screen-custom mx-auto flex justify-between items-center transition-all duration-300">
+                <a href="/index.html">
+                    <img src="/asset/logo-black.png" class="w-20 md:w-28 transition-all duration-300" alt="Rangawak LOGO">
+                </a>
+                <div class="w-full flex justify-end">
+                    <!-- MENU ICON -->
+                    <div class="flex items-center lg:mr-10 relative">
+                        <button id="menu-btn" class="flex items-center text-slate-900">
+                            <span class="uppercase font-medium transition-all duration-300">Menu</span>
+                            <span class="iconify plus ml-2" data-icon="ant-design:plus-circle-outlined"></span>
+                            <span class="iconify minus ml-2 hidden" data-icon="akar-icons:circle-minus"></span>
+                        </button>
+                        <!-- SUBMENU -->
+                        <ul id="menu-dropdown" class="fixed z-30 text-slate-100 lg:text-slate-900 inset-0 lg:inset-auto transition-all duration-300 bg-slate-900 lg:bg-transparent lg:absolute lg:top-full transform -translate-y-full lg:translate-y-2 left-0 w-full lg:w-56 h-auto text-left flex flex-col justify-center items-center lg:items-start">
+                            <li class="mt-2">
+                                <a href="/about.html" class="uppercase font-medium hover:underline">About</a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="/material-and-finishes.html" class="uppercase font-medium hover:underline">Material and finishes</a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="/product.html" class="uppercase font-medium hover:underline">Products</a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="/get-in-touch.html" class="uppercase font-medium hover:underline">Get in touch</a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="/terms-of-order.html" class="uppercase font-medium hover:underline">Terms of order</a>
+                            </li>
+                            <li class="mt-5 lg:hidden">
+                                <input type="text" id="search_product" class="text-slate-200 text-center placeholder-slate-400 lg:placeholder-white focus:outline-none hover:placeholder-slate-300 text-sm px-2 py-3 lg:py-1 rounded-sm border border-white bg-transparent uppercase" placeholder="Search for products">
+                            </li>
+                            <li class="mt-2">
+                                <button id="menu-dropdown-closer" class="mt-7 lg:hidden relative transition-all duration-300 hover:bg-slate-700 p-5 rounded-full">
+                                    <span class="iconify text-2xl" data-icon="bytesize:close"></span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- SEARCH INPUT -->
+                    <input type="text" id="search_product" class="hidden lg:flex text-slate-900 placeholder-slate-900 focus:outline-none hover:placeholder-slate-600 text-sm px-2 py-1 border border-slate-900 bg-transparent uppercase" placeholder="Search for products">
+                </div>
+            </div>
+        </nav>
+        <!-- END : NAVBAR -->
+        <!--  -->
+        <div class="w-full max-w-screen-lg mx-auto h-full flex flex-col justify-center px-5 pt-40 pb-16">
+            <!-- TOP -->
+            <div class="w-full">
+                <div class="w-full flex flex-col md:flex-row items-center justify-between">
+                    <div data-aos="fade-up" class="pagination flex items-center text-gray-600 w-full">
+                        <a href="/index.html" class="flex items-center">
+                            <span class="font-semibold text-sm uppercase hover:underline">Home</span>
+                        </a>
+                        <span class="iconify text-xs mx-2" data-icon="bi:chevron-right"></span>
+                        <span class="flex items-center">
+                            <span class="font-semibold text-sm uppercase">Products</span>
+                        </span>
+                    </div>
+                    <div x-data="{ openAuthForm : false }" class="w-full flex lg:justify-end">
+                        <button @click="openAuthForm = true" data-aos="fade-up" data-aos-delay="200" id="link-with-icon" class="flex items-center text-yellow-700 hover:underline">
+                            <span class="font-semibold text-sm uppercase">Sign up to get latest promo</span>
+                            <span class="iconify text-xs ml-2 transition-all duration-300" data-icon="bi:chevron-right"></span>
+                        </button>
+                        <div x-show="openAuthForm" class="w-full h-screen fixed z-50 inset-0 bg-slate-900 bg-opacity-50 p-3 cursor-pointer grid place-items-center">
+                            <div x-show="openAuthForm" @click.away="openAuthForm = false" x-transition x-transition.duration.200ms 
+                            class="w-full bg-slate-300 cursor-default rounded-lg mx-auto max-w-xl p-5 md:p-10 lg:p-16">
+                                <h1 class="text-xl lg:text-3xl uppercase font-semibold max-w-md leading-relaxed md:leading-loose">Sign up to get <br> latest promo</h1>
+                                <p class="text-sm py-5 md:py-10">Sign up for our newsletter and be the first to recieve the latest on products, promo, upcoming events of Rangawak.</p>
+                                <!-- FORM INPUT -->
+                                <form action="#" method="">
+                                    <!-- TOP INPUT -->
+                                    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-5 pb-5">
+                                        <div class="w-full">
+                                            <input type="text" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm focus:bg-slate-400 placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent uppercase" placeholder="Enter your first name">
+                                        </div>
+                                        <div class="w-full">
+                                            <input type="text" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm focus:bg-slate-400 placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent uppercase" placeholder="Enter your last name">
+                                        </div>
+                                    </div>
+                                    <!-- BOTTOM INPUT -->
+                                    <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-5">
+                                        <div class="w-full col-span-1 lg:col-span-3">
+                                            <input type="email" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm focus:bg-slate-400 placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent uppercase" placeholder="Enter email">
+                                        </div>
+                                        <div class="w-full col-span-1">
+                                            <button type="submit" class="w-full py-1.5 transition-all duration-300 text-sm bg-slate-500 text-white hover:bg-slate-400 rounded-sm">Sign up</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p data-aos="fade-up" class="text-sm pt-10 leading-relaxed w-72">If you want to inquire about a product, The Rangawak Team ready to help. <br /> Please contact us.</p>
+            </div>
+            <!-- START : SINGLE PRODUCT -->
+        </div>
+    </header>
+    <!-- END : HEADER -->
+    <section class="w-full pb-16 md:pt-5">
+        <!-- BOTTOM -->
+        <div class="w-full max-w-screen-lg mx-auto grid grid-cols-1 lg:grid-cols-4 gap-5 px-5 pt-16">
+            <div class="w-full col-span-1">
+                <p data-aos="fade-up" class="text-sm leading-relaxed text-slate-600">Find us on Google Maps, Waze, or your favourite map apps on your computer or phone.</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200" class="w-full col-span-1 lg:col-span-3 lg:col-start-2">
+                <iframe class="w-full rounded-md" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d143307.9088471542!2d100.5498574897384!3d-0.26378390307812744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd53589cc363e65%3A0x963333680b320ed6!2sJl.%20Raya%20Batusangkar-Payakumbuh%2C%20Barulak%2C%20Kec.%20Tj.%20Baru%2C%20Kabupaten%20Tanah%20Datar%2C%20Sumatera%20Barat!5e0!3m2!1sid!2sid!4v1657586195121!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+    
+    <!-- START : FOOTER -->
+    <footer class="w-full px-5">
+        <div class="w-full max-w-screen-custom mx-auto grid grid-cols-1 lg:grid-cols-3 py-10">
+            <div class="w-full col-span-1 lg:col-span-2 flex flex-col lg:flex-row">
+                <div class="w-full lg:w-1/2">
+                    <p class="font-bold text-sm pb-2 text-slate-900 uppercase">Workshop</p>
+                    <a href="#" class="text-sm">Jalan Lintas Batu Sangkar - Payakumbuh, <br /> Barulak, Tanah Datar, Sumatra Barat, 27821, ID</a>
+                </div>
+                <div class="w-full lg:w-1/2 mt-5 lg:mt-0">
+                    <a href="#" class="text-sm flex">
+                        <span class="font-bold text-slate-900 text-base mr-2">P</span>
+                        <span>+62 (852) 7859 0997</span>
+                    </a>
+                    <a href="#" class="text-sm flex">
+                        <span class="font-bold text-slate-900 text-base mr-2">E</span>
+                        <span>hello@rangawak.atalier.com</span>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full col-span-1 lg:col-span-1 flex lg:justify-end pt-10 lg:pt-0">
+                <span class="text-sm">Rangawak atelier</span>
+            </div>
+        </div>
+    </footer>
+    <!-- END : FOOTER -->
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/asset/js/nav.js"></script>
+    <script>
+        AOS.init()
+    </script>
+</body>
+</html>
