@@ -24,15 +24,6 @@ window.addEventListener('scroll', function() {
             headerLogo.setAttribute('src', '/asset/logo.png')
             mobileMenuBtn.classList.replace('text-slate-900', 'text-slate-100')
         }
-        searchProduct.forEach(search => {
-            search.classList.replace('border-white', 'border-slate-900')
-            search.classList.replace('placeholder-white', 'placeholder-slate-900')
-            search.classList.replace('text-white', 'text-slate-900')
-            search.classList.add('lg:border-white')
-            search.classList.add('lg:placeholder-white')
-            search.classList.add('lg:text-white')
-        })
-
     } else {
         const navbarChildrenWrapper = navbar.querySelector('div')
         
@@ -45,20 +36,28 @@ window.addEventListener('scroll', function() {
             headerLogo.setAttribute('src', '/asset/logo-black.png')
             mobileMenuBtn.classList.replace('text-slate-100', 'text-slate-900')
         }
-        searchProduct.forEach(search => {
-            search.classList.replace('border-slate-900', 'border-white')
-            search.classList.replace('placeholder-slate-900', 'placeholder-white')
-            search.classList.replace('text-slate-900', 'text-white')
-        })
     }
     
     if(scrollPosition > 500) {
         mobileMenuLink.forEach(link => {
             link.classList.add('text-black')
         })
+        searchProduct.forEach(search => {
+            search.classList.replace('border-white', 'border-slate-900')
+            search.classList.replace('placeholder-white', 'placeholder-slate-900')
+            search.classList.replace('text-white', 'text-slate-900')
+            search.classList.add('lg:border-white')
+            search.classList.add('lg:placeholder-white')
+            search.classList.add('lg:text-white')
+        })
     } else {
         mobileMenuLink.forEach(link => {
             link.classList.remove('text-black')
+        })
+        searchProduct.forEach(search => {
+            search.classList.replace('border-slate-900', 'border-white')
+            search.classList.replace('placeholder-slate-900', 'placeholder-white')
+            search.classList.replace('text-slate-900', 'text-white')
         })
     }
 })
