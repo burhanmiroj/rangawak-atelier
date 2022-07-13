@@ -15,7 +15,7 @@ if (navbar.classList.contains('dark-content')) {
     searchProduct.forEach(search => {
         search.classList.replace('border-white', 'border-black')
         search.classList.replace('placeholder-white', 'placeholder-black')
-        search.classList.replace('hover:placeholder-slate-100', 'hover:placeholder-slate-700')
+        search.classList.replace('hover:placeholder-slate-100', 'hover:placeholder-slate-500')
         search.classList.replace('text-white', 'text-black')
     })
 }
@@ -30,10 +30,19 @@ window.addEventListener('scroll', function() {
         navbar.classList.add('bg-black')
         navbarChildrenWrapper.classList.replace('h-20', 'h-16')
 
+        // 
+        mobileMenuBtn.classList.add('text-white')
+        
         // DARK CONTENT NAVBAR
         if (navbar.classList.contains('dark-content')) {        
             headerLogo.setAttribute('src', '/asset/logo.png')
-            mobileMenuBtn.classList.replace('text-slate-900', 'text-slate-100')
+            mobileMenuBtn.classList.replace('text-black', 'text-slate-100')
+
+            searchProduct.forEach(search => {
+                search.classList.replace('border-black', 'border-white')
+                search.classList.replace('placeholder-black', 'placeholder-white')
+                search.classList.replace('text-black', 'text-white')
+            })
         }
     } else {
         const navbarChildrenWrapper = navbar.querySelector('div')
@@ -44,8 +53,17 @@ window.addEventListener('scroll', function() {
 
         // DARK CONTENT NAVBAR
         if (navbar.classList.contains('dark-content')) {        
+
+            mobileMenuBtn.classList.remove('text-white')
+
             headerLogo.setAttribute('src', '/asset/logo-black.png')
-            mobileMenuBtn.classList.replace('text-slate-100', 'text-slate-900')
+            mobileMenuBtn.classList.replace('text-slate-100', 'text-black')
+
+            searchProduct.forEach(search => {
+                search.classList.replace('border-white', 'border-black')
+                search.classList.replace('placeholder-white', 'placeholder-black')
+                search.classList.replace('text-white', 'text-black')
+            })
         }
     }
     
@@ -53,22 +71,26 @@ window.addEventListener('scroll', function() {
         mobileMenuLink.forEach(link => {
             link.classList.add('text-black')
         })
-        searchProduct.forEach(search => {
-            search.classList.replace('border-white', 'border-slate-900')
-            search.classList.replace('placeholder-white', 'placeholder-slate-900')
-            search.classList.replace('text-white', 'text-slate-900')
-            search.classList.add('lg:border-white')
-            search.classList.add('lg:placeholder-white')
-            search.classList.add('lg:text-white')
-        })
+        if(navbar.classList.contains(!('black-content'))) {
+            searchProduct.forEach(search => {
+                search.classList.replace('border-white', 'border-black')
+                search.classList.replace('placeholder-white', 'placeholder-black')
+                search.classList.replace('text-white', 'text-black')
+                search.classList.add('lg:border-white')
+                search.classList.add('lg:placeholder-white')
+                search.classList.add('lg:text-white')
+            })
+        }
     } else {
         mobileMenuLink.forEach(link => {
             link.classList.remove('text-black')
         })
-        searchProduct.forEach(search => {
-            search.classList.replace('border-slate-900', 'border-white')
-            search.classList.replace('placeholder-slate-900', 'placeholder-white')
-            search.classList.replace('text-slate-900', 'text-white')
-        })
+        if(navbar.classList.contains(!('black-content'))) {
+            searchProduct.forEach(search => {
+                search.classList.replace('border-black', 'border-white')
+                search.classList.replace('placeholder-black', 'placeholder-white')
+                search.classList.replace('text-black', 'text-white')
+            })
+        }
     }
 })

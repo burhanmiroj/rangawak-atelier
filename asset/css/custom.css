@@ -91,3 +91,16 @@ body {
     }
     
 }
+
+#product-img-wrapper:hover #product-content {
+    opacity: 1;
+}
+#product-img-wrapper + h1 {
+    transition: all 300ms ease;
+}
+#product-img-wrapper:hover + h1 {
+    opacity: 0;
+}
+#product-img-wrapper:hover img {
+    transform: scale(1.2);
+}

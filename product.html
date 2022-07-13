@@ -15,7 +15,7 @@
 </head>
 <body>
     <!-- START : HEADER -->
-    <header class="w-full overflow-hidden">
+    <div class="w-full overflow-hidden">
         <!-- START : NAVBAR -->
         <nav class="fixed dark-content z-20 w-full px-5 transition-all duration-300">
             <div class="w-full h-20 max-w-screen-custom mx-auto flex justify-between items-center transition-all duration-300">
@@ -62,7 +62,7 @@
         <div class="w-full max-w-screen-lg mx-auto h-full flex flex-col justify-center px-5 pt-40 pb-16">
             <!-- TOP -->
             <div class="w-full">
-                <div class="w-full flex flex-col md:flex-row items-center justify-between">
+                <div class="w-full flex flex-col md:flex-row items-start md:items-center justify-between">
                     <div data-aos="fade-up" class="pagination flex items-center text-copper-brown w-full">
                         <a href="/index.html" class="flex items-center">
                             <span class="font-semibold text-sm uppercase hover:underline">Home</span>
@@ -74,13 +74,18 @@
                         <span class="iconify text-xs mx-2" data-icon="bi:chevron-right"></span>
                     </div>
                     <div x-data="{ openAuthForm : false }">
-                        <button @click="openAuthForm = true" data-aos="fade-up" data-aos-delay="400" id="link-with-icon" class="flex w-64 justify-end font-bold items-center text-copper-brown hover:underline mt-3">
+                        <button @click="openAuthForm = true" data-aos="fade-up" data-aos-delay="100" id="link-with-icon" class="flex items-center justify-end md:w-64 font-bold text-copper-brown hover:underline mt-3">
                             <span class="text-sm uppercase">Sign up to get promo</span>
                             <span class="iconify text-xs ml-2 transition-all duration-300" data-icon="bi:chevron-right"></span>
                         </button>
                         <div x-show="openAuthForm" class="w-full h-screen fixed z-50 inset-0 bg-slate-900 bg-opacity-50 p-3 cursor-pointer grid place-items-center">
                             <div x-show="openAuthForm" @click.away="openAuthForm = false" x-transition x-transition.duration.200ms 
-                            class="w-full bg-slate-300 cursor-default rounded-lg mx-auto max-w-xl p-5 md:p-10 lg:p-16">
+                            class="w-full bg-wood-trush cursor-default rounded-md mx-auto max-w-xl p-5 md:p-10 lg:p-16 relative">
+                                <!-- CLOSE BTN -->
+                                <button @click="openAuthForm = false" class="absolute top-0 right-0 m-10">
+                                    <span class="iconify text-white text-4xl transition-all duration-300 transform hover:rotate-180" data-icon="bi:x-lg"></span>
+                                </button>
+                                <!-- CLOSE BTN -->
                                 <h1 class="text-xl lg:text-3xl uppercase font-semibold max-w-md leading-relaxed md:leading-loose">Sign up to get <br> latest promo</h1>
                                 <p class="text-sm py-5 md:py-10">Sign up for our newsletter and be the first to recieve the latest on products, promo, upcoming events of Rangawak.</p>
                                 <!-- FORM INPUT -->
@@ -89,21 +94,21 @@
                                     <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-5 pb-5">
                                         <div class="w-full">
                                             <label for="first_name" class="text-sm uppercase font-bold text-copper-brown pb-1">First Name</label>
-                                            <input type="text" name="first_name" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm focus:bg-slate-400 placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent" placeholder="Enter your first name">
+                                            <input type="text" name="first_name" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent" placeholder="Enter your first name">
                                         </div>
                                         <div class="w-full">
                                             <label for="last_name" class="text-sm uppercase font-bold text-copper-brown pb-1">Last Name</label>
-                                            <input type="text" name="last_name" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm focus:bg-slate-400 placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent" placeholder="Enter your last name">
+                                            <input type="text" name="last_name" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent" placeholder="Enter your last name">
                                         </div>
                                     </div>
                                     <!-- BOTTOM INPUT -->
                                     <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-5 items-end">
                                         <div class="w-full col-span-1 lg:col-span-3">
                                             <label for="email" class="text-sm uppercase font-bold text-copper-brown pb-1">Email</label>
-                                            <input type="email" name="email" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm focus:bg-slate-400 placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent" placeholder="Enter email">
+                                            <input type="email" name="email" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent" placeholder="Enter email">
                                         </div>
                                         <div class="w-full col-span-1">
-                                            <button type="submit" class="w-full py-1.5 transition-all duration-300 text-sm bg-slate-500 text-white hover:bg-slate-400 rounded-sm">Sign up</button>
+                                            <button type="submit" class="w-full py-1.5 transition-all duration-300 text-sm bg-gray-500 text-white hover:bg-gray-400 rounded-sm">Sign up</button>
                                         </div>
                                     </div>
                                 </form>
@@ -112,9 +117,165 @@
                     </div>
                 </div>
             </div>
-            <!-- START : SINGLE PRODUCT -->
+            <!-- START : CATALOG PRODUCT -->
+            <div x-data="{ activeTab: 1 }" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-10 my-10">
+                <div class="flex items-start space-x-3 md:space-x-0 md:space-y-2 md:flex-col col-span-1 pb-5">
+                    <button data-aos="fade-up" @click="activeTab = 1" class="font-bold text-sm uppercase" :class="{ 'text-copper-brown': activeTab === 1 }">
+                        View all
+                    </button>
+                    <button data-aos="fade-up" data-aos-delay="100" @click="activeTab = 2" class="font-bold text-sm uppercase" :class="{ 'text-copper-brown': activeTab === 2 }">
+                        Chair
+                    </button>
+                    <button data-aos="fade-up" data-aos-delay="200" @click="activeTab = 3" class="font-bold text-sm uppercase" :class="{ 'text-copper-brown': activeTab === 3 }">
+                        Custom made
+                    </button>
+                    <button data-aos="fade-up" data-aos-delay="300" @click="activeTab = 4" class="font-bold text-sm uppercase" :class="{ 'text-copper-brown': activeTab === 4 }">
+                        Tables
+                    </button>
+                    <button data-aos="fade-up" data-aos-delay="400" @click="activeTab = 5" class="font-bold text-sm uppercase" :class="{ 'text-copper-brown': activeTab === 5 }">
+                        Sale items
+                    </button>
+                </div>
+                <!-- TABS CONTENT -->
+                <div class="w-full col-span-1 md:col-span-2 lg:col-span-4">
+                    <!-- KOBA CHAIR -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-5 md:gap-10" x-transition x-show="activeTab === 1">
+                        <!-- SINGLE PRODUCT -->
+                        <div data-aos="fade-up" class="w-full cursor-pointer">
+                            <div id="product-img-wrapper" class="w-full relative overflow-hidden">
+                                <img src="/asset/img/product/koba-chair.png" class="transition-all duration-300" alt="Single product">
+                                <!-- CONTENT -->
+                                <div id="product-content" class="w-full absolute inset-0 transition-all duration-300 bg-wood-trush opacity-0 z-10">
+                                    
+                                </div>
+                            </div>
+                            <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Koba chair</h1>
+                        </div>
+                        <!-- SINGLE PRODUCT -->
+                        <div data-aos="fade-up" data-aos-delay="100" class="w-full cursor-pointer">
+                            <div id="product-img-wrapper" class="w-full relative overflow-hidden">
+                                <img src="/asset/img/product/salo-table.png" class="transition-all duration-300" alt="Single product">
+                                <!-- CONTENT -->
+                                <div id="product-content" class="w-full absolute inset-0 transition-all duration-300 bg-wood-trush opacity-0 z-10">
+                                    
+                                </div>
+                            </div>
+                            <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Salo table</h1>
+                        </div>
+                        <!-- SINGLE PRODUCT -->
+                        <div data-aos="fade-up" class="w-full cursor-pointer">
+                            <div id="product-img-wrapper" class="w-full relative overflow-hidden">
+                                <img src="/asset/img/product/koba-arm-chair.png" class="transition-all duration-300" alt="Single product">
+                                <!-- CONTENT -->
+                                <div id="product-content" class="w-full absolute inset-0 transition-all duration-300 bg-gray-wood-trush-0 z-10">
+                                    
+                                </div>
+                            </div>
+                            <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Koba arm chair</h1>
+                        </div>
+                        <!-- SINGLE PRODUCT -->
+                        <div data-aos="fade-up" data-aos-delay="100" class="w-full cursor-pointer">
+                            <div id="product-img-wrapper" class="w-full relative overflow-hidden">
+                                <img src="/asset/img/product/kuro-chair.png" class="transition-all duration-300" alt="Single product">
+                                <!-- CONTENT -->
+                                <div id="product-content" class="w-full absolute inset-0 transition-all duration-300 bg-wood-trush opacity-0 z-10">
+                                    
+                                </div>
+                            </div>
+                            <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Kuro chair</h1>
+                        </div>
+                        <!-- SINGLE PRODUCT -->
+                        <div data-aos="fade-up" class="w-full cursor-pointer">
+                            <div id="product-img-wrapper" class="w-full relative overflow-hidden">
+                                <img src="/asset/img/product/mano-table.png" class="transition-all duration-300" alt="Single product">
+                                <!-- CONTENT -->
+                                <div id="product-content" class="w-full absolute inset-0 transition-all duration-300 bg-wood-trush opacity-0 z-10">
+                                    
+                                </div>
+                            </div>
+                            <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Mano table</h1>
+                        </div>
+                        <!-- BOTTOM TEXT -->
+                        <div class="w-full col-span-2 grid grid-cols-1 sm:grid-cols-2 pt-10 md:gap-10">
+                            <div data-aos="fade-in" class="w-full">
+                                <p class="text-sm leading-relaxed">Rangawak is a philosophy which asserts that everyone has the right to have powerful and durable furniture. Every furniture which is presented at Rangawak is the handicraft of a wood craftsman and <span class="sm:hidden"></span></p>
+                            </div>
+                            <div data-aos="fade-in" class="w-full hidden sm:block">
+                                <p class="text-sm leading-relaxed">its created from the highest quality wood resources. Rangawak started with a desire to make noteworthy furniture using sophisticated methods and executed with captivating results.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SALO TABLE -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10" x-transition x-show="activeTab === 2">
+                        <!-- SINGLE PRODUCT -->
+                        <div class="w-full">
+                            <div id="product-img-wrapper" class="w-full relative overflow-hidden">
+                                <img src="/asset/img/product/koba-chair.png" class="transition-all duration-300" alt="">
+                                <!-- CONTENT -->
+                                <div id="product-content" class="w-full absolute inset-0 transition-all duration-300 bg-gray-300 opacity-0 z-10">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SINGLE PRODUCT -->
+                        <div class="w-full">
+                            <div id="product-img-wrapper" class="w-full relative overflow-hidden">
+                                <img src="/asset/img/product/koba-arm-chair.png" class="transition-all duration-300" alt="">
+                                <!-- CONTENT -->
+                                <div id="product-content" class="w-full absolute inset-0 transition-all duration-300 bg-gray-300 opacity-0 z-10">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SINGLE PRODUCT -->
+                        <div class="w-full">
+                            <div id="product-img-wrapper" class="w-full relative overflow-hidden">
+                                <img src="/asset/img/product/kuro-chair.png" class="transition-all duration-300" alt="">
+                                <!-- CONTENT -->
+                                <div id="product-content" class="w-full absolute inset-0 transition-all duration-300 bg-gray-300 opacity-0 z-10">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KOBA ARM CHAIR -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10" x-transition x-show="activeTab === 3">
+                        
+                    </div>
+                    <!-- KURO CHAIR -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10" x-transition x-show="activeTab === 4">
+                        <!-- SINGLE PRODUCT -->
+                        <div class="w-full">
+                            <div id="product-img-wrapper" class="w-full relative overflow-hidden">
+                                <img src="/asset/img/product/salo-table.png" class="transition-all duration-300" alt="">
+                                <!-- CONTENT -->
+                                <div id="product-content" class="w-full absolute inset-0 transition-all duration-300 bg-gray-300 opacity-0 z-10">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SINGLE PRODUCT -->
+                        <div class="w-full">
+                            <div id="product-img-wrapper" class="w-full relative overflow-hidden">
+                                <img src="/asset/img/product/mano-table.png" class="transition-all duration-300" alt="">
+                                <!-- CONTENT -->
+                                <div id="product-content" class="w-full absolute inset-0 transition-all duration-300 bg-gray-300 opacity-0 z-10">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- MANO TABLE -->
+                    <div class="w-full" x-transition x-show="activeTab === 5">
+                        <!-- SINGLE PRODUCT -->
+                        <div class="w-full">
+                            <img src="/asset/img/product/sale-11-11.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </header>
+    </div>
     <!-- END : HEADER -->
     
     <!-- START : FOOTER -->
