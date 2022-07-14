@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/asset/css/custom.css">
     <link rel="stylesheet" href="/asset/css/app.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
     <!-- START : HEADER -->
@@ -72,12 +72,8 @@
                             <span class="font-bold text-sm uppercase hover:underline">Products</span>
                         </a>
                         <span class="iconify text-xs mx-2" data-icon="bi:chevron-right"></span>
-                        <a href="/products/chair.html" class="flex items-center">
-                            <span class="font-bold text-sm uppercase hover:underline">Chairs</span>
-                        </a>
-                        <span class="iconify text-xs mx-2" data-icon="bi:chevron-right"></span>
                         <span class="flex items-center">
-                            <span class="font-bold text-sm uppercase">Koba</span>
+                            <span class="font-bold text-sm uppercase">Chairs</span>
                         </span>
                         <span class="iconify text-xs mx-2" data-icon="bi:chevron-right"></span>
                     </div>
@@ -128,19 +124,19 @@
             <!-- START : CATALOG PRODUCT -->
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-10 my-20">
                 <div class="flex items-start space-x-5 md:space-x-0 md:space-y-2 md:flex-col col-span-1 pb-5 whitespace-nowrap overflow-x-scroll sm:overflow-x-hidden">
-                    <a href="/products.html" data-aos="fade-up" class="font-bold text-sm uppercase">
+                    <a href="/products.html" data-aos="fade-up" class="font-bold hover:underline text-sm uppercase">
                         View all
                     </a>
                     <a href="/products/chair.html" data-aos="fade-up" data-aos-delay="100" class="font-bold text-sm uppercase text-copper-brown">
                         Chairs
                     </a>
-                    <a href="/products/custom-made.html" data-aos="fade-up" data-aos-delay="200" class="font-bold text-sm uppercase">
+                    <a href="/products/custom-made.html" data-aos="fade-up" data-aos-delay="200" class="font-bold hover:underline text-sm uppercase">
                         Custom made
                     </a>
-                    <a href="/products/tables.html" data-aos="fade-up" data-aos-delay="300" class="font-bold text-sm uppercase">
+                    <a href="/products/tables.html" data-aos="fade-up" data-aos-delay="300" class="font-bold hover:underline text-sm uppercase">
                         Tables
                     </a>
-                    <a href="/products/sale-items.html" data-aos="fade-up" data-aos-delay="400" class="font-bold text-sm uppercase">
+                    <a href="/products/sale-items.html" data-aos="fade-up" data-aos-delay="400" class="font-bold hover:underline text-sm uppercase">
                         Sale items
                     </a>
                 </div>
@@ -150,7 +146,7 @@
                     <div class="w-full">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
                             <!-- SINGLE PRODUCT -->
-                            <a href="/products/chair/koba.html" data-aos="fade-up" class="w-full cursor-pointer">
+                            <a href="/products/koba-chair/koba-chair.html" data-aos="fade-up" class="w-full cursor-pointer">
                                 <div id="product-img-wrapper" class="w-full relative overflow-hidden">
                                     <img id="main-image" src="/asset/img/product/koba-chair.png" class="transition-all duration-300" alt="Single product">
                                     <!-- CARD COVER -->
@@ -161,7 +157,7 @@
                                 <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Koba chair</h1>
                             </a>
                             <!-- SINGLE PRODUCT -->
-                            <a href="#" data-aos="fade-up" data-aos-delay="200" class="w-full cursor-pointer">
+                            <a href="/products/koba-arm-chair/koba-arm-chair.html" data-aos="fade-up" data-aos-delay="200" class="w-full cursor-pointer">
                                 <div id="product-img-wrapper" class="w-full relative overflow-hidden">
                                     <img id="main-image" src="/asset/img/product/koba-arm-chair.png" class="transition-all duration-300" alt="Single product">
                                     <!-- CARD COVER -->
@@ -172,7 +168,7 @@
                                 <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Koba arm chair</h1>
                             </a>
                             <!-- SINGLE PRODUCT -->
-                            <a href="#" data-aos="fade-up" data-aos-delay="100" class="w-full cursor-pointer">
+                            <a href="/products/kuro-chair/kuro-chair.html" data-aos="fade-up" data-aos-delay="100" class="w-full cursor-pointer">
                                 <div id="product-img-wrapper" class="w-full relative overflow-hidden">
                                     <img id="main-image" src="/asset/img/product/kuro-chair.png" class="transition-all duration-300" alt="Single product">
                                     <!-- CARD COVER -->

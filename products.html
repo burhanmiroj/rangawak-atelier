@@ -118,31 +118,31 @@
                 </div>
             </div>
             <!-- START : CATALOG PRODUCT -->
-            <div x-data="{ activeTab: 1 }" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-10 my-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-10 my-20">
                 <div class="flex items-start space-x-5 md:space-x-0 md:space-y-2 md:flex-col col-span-1 pb-5 whitespace-nowrap overflow-x-scroll sm:overflow-x-hidden">
-                    <button data-aos="fade-up" @click="activeTab = 1" class="font-bold text-sm uppercase" :class="{ 'text-copper-brown': activeTab === 1 }">
+                    <a href="/products.html" data-aos="fade-up" class="font-bold text-sm uppercase text-copper-brown">
                         View all
-                    </button>
-                    <button data-aos="fade-up" data-aos-delay="100" @click="activeTab = 2" class="font-bold text-sm uppercase" :class="{ 'text-copper-brown': activeTab === 2 }">
+                    </a>
+                    <a href="/products/chair.html" data-aos="fade-up" data-aos-delay="100" class="font-bold hover:underline text-sm uppercase">
                         Chair
-                    </button>
-                    <button data-aos="fade-up" data-aos-delay="200" @click="activeTab = 3" class="font-bold text-sm uppercase" :class="{ 'text-copper-brown': activeTab === 3 }">
+                    </a>
+                    <a href="/products/custom-made.html" data-aos="fade-up" data-aos-delay="200" class="font-bold hover:underline text-sm uppercase">
                         Custom made
-                    </button>
-                    <button data-aos="fade-up" data-aos-delay="300" @click="activeTab = 4" class="font-bold text-sm uppercase" :class="{ 'text-copper-brown': activeTab === 4 }">
+                    </a>
+                    <a href="/products/tables.html" data-aos="fade-up" data-aos-delay="300" class="font-bold hover:underline text-sm uppercase">
                         Tables
-                    </button>
-                    <button data-aos="fade-up" data-aos-delay="400" @click="activeTab = 5" class="font-bold text-sm uppercase" :class="{ 'text-copper-brown': activeTab === 5 }">
+                    </a>
+                    <a href="/products/sale-items.html" data-aos="fade-up" data-aos-delay="400" class="font-bold hover:underline text-sm uppercase">
                         Sale items
-                    </button>
+                    </a>
                 </div>
                 <!-- TABS CONTENT -->
                 <div class="w-full col-span-1 md:col-span-2 lg:col-span-4">
                     <!-- VIEW ALL -->
-                    <div x-transition x-show="activeTab === 1">
+                    <div class="w-full">
                         <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-y-5 md:gap-10">
                             <!-- SINGLE PRODUCT -->
-                            <a href="/products/chair/koba.html" data-aos="fade-up" class="w-full cursor-pointer">
+                            <a href="/products/koba-chair/koba-chair.html" data-aos="fade-up" class="w-full cursor-pointer">
                                 <div id="product-img-wrapper" class="w-full relative overflow-hidden">
                                     <img id="main-image" src="/asset/img/product/koba-chair.png" class="transition-all duration-300" alt="Single product">
                                     <!-- CARD COVER -->
@@ -153,7 +153,7 @@
                                 <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Koba chair</h1>
                             </a>
                             <!-- SINGLE PRODUCT -->
-                            <a href="#" data-aos="fade-up" data-aos-delay="100" class="w-full cursor-pointer">
+                            <a href="/products/salo-table/salo-table.html" data-aos="fade-up" data-aos-delay="100" class="w-full cursor-pointer">
                                 <div id="product-img-wrapper" class="w-full relative overflow-hidden">
                                     <img id="main-image" src="/asset/img/product/salo-table.png" class="transition-all duration-300" alt="Single product">
                                     <!-- CARD COVER -->
@@ -164,7 +164,7 @@
                                 <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Salo table</h1>
                             </a>
                             <!-- SINGLE PRODUCT -->
-                            <a href="#" data-aos="fade-up" class="w-full cursor-pointer">
+                            <a href="/products/koba-arm-chair/koba-arm-chair.html" data-aos="fade-up" class="w-full cursor-pointer">
                                 <div id="product-img-wrapper" class="w-full relative overflow-hidden">
                                     <img id="main-image" src="/asset/img/product/koba-arm-chair.png" class="transition-all duration-300" alt="Single product">
                                     <!-- CARD COVER -->
@@ -175,7 +175,7 @@
                                 <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Koba arm chair</h1>
                             </a>
                             <!-- SINGLE PRODUCT -->
-                            <a href="#" data-aos="fade-up" data-aos-delay="100" class="w-full cursor-pointer">
+                            <a href="/products/kuro-chair/kuro-chair.html" data-aos="fade-up" data-aos-delay="100" class="w-full cursor-pointer">
                                 <div id="product-img-wrapper" class="w-full relative overflow-hidden">
                                     <img id="main-image" src="/asset/img/product/kuro-chair.png" class="transition-all duration-300" alt="Single product">
                                     <!-- CARD COVER -->
@@ -197,171 +197,6 @@
                                 <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Mano table</h1>
                             </a>
                         </div>
-                        <!-- BOTTOM TEXT -->
-                        <div class="w-full col-span-2 grid grid-cols-1 sm:grid-cols-2 pt-10 gap-5 md:gap-10">
-                            <div data-aos="fade-in" class="w-full">
-                                <p class="text-sm leading-relaxed">Rangawak is a philosophy which asserts that everyone has the right to have powerful and durable furniture. Every furniture which is presented at Rangawak is the handicraft of a wood craftsman and <span class="sm:hidden">its created from the highest quality wood resources. Rangawak started with a desire to make noteworthy furniture using sophisticated methods and executed with captivating results.</span></p>
-                            </div>
-                            <div data-aos="fade-in" class="w-full hidden sm:block">
-                                <p class="text-sm leading-relaxed">its created from the highest quality wood resources. Rangawak started with a desire to make noteworthy furniture using sophisticated methods and executed with captivating results.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- CHAIR-->
-                    <div x-transition x-show="activeTab === 2">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
-                            <!-- SINGLE PRODUCT -->
-                            <a href="/products/chair/koba.html" data-aos="fade-up" class="w-full cursor-pointer">
-                                <div id="product-img-wrapper" class="w-full relative overflow-hidden">
-                                    <img id="main-image" src="/asset/img/product/koba-chair.png" class="transition-all duration-300" alt="Single product">
-                                    <!-- CARD COVER -->
-                                    <div id="product-content" class="w-full absolute inset-0 p-3 transition-all duration-300 bg-wood-trush opacity-0 z-10">
-                                        <img src="/asset/img/product/koba/koba-cover-onhover.png" alt="">
-                                    </div>
-                                </div>
-                                <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Koba chair</h1>
-                            </a>
-                            <!-- SINGLE PRODUCT -->
-                            <a href="#" data-aos="fade-up" class="w-full cursor-pointer">
-                                <div id="product-img-wrapper" class="w-full relative overflow-hidden">
-                                    <img id="main-image" src="/asset/img/product/koba-arm-chair.png" class="transition-all duration-300" alt="Single product">
-                                    <!-- CARD COVER -->
-                                    <div id="product-content" class="w-full absolute inset-0 p-3 transition-all duration-300 bg-wood-trush opacity-0 z-10">
-                                        <img src="/asset/img/product/koba/koba-cover-onhover.png" alt="">
-                                    </div>
-                                </div>
-                                <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Koba arm chair</h1>
-                            </a>
-                            <!-- SINGLE PRODUCT -->
-                            <a href="#" data-aos="fade-up" data-aos-delay="100" class="w-full cursor-pointer">
-                                <div id="product-img-wrapper" class="w-full relative overflow-hidden">
-                                    <img id="main-image" src="/asset/img/product/kuro-chair.png" class="transition-all duration-300" alt="Single product">
-                                    <!-- CARD COVER -->
-                                    <div id="product-content" class="w-full absolute inset-0 p-3 transition-all duration-300 bg-wood-trush opacity-0 z-10">
-                                        <img src="/asset/img/product/kuro/kuro-cover-onhover.png" alt="">
-                                    </div>
-                                </div>
-                                <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Kuro chair</h1>
-                            </a>
-                        </div>
-                        <!-- BOTTOM TEXT -->
-                        <div class="w-full col-span-2 grid grid-cols-1 sm:grid-cols-2 pt-10 gap-5 md:gap-10">
-                            <div data-aos="fade-in" class="w-full">
-                                <p class="text-sm leading-relaxed">Strong and comfortable are what you will get by using our chair collection, made of Mahogany and Surian Red Chedar wood. This chair will deliver a legit experience to any area on your home. <span class="sm:hidden"></span></p>
-                            </div>
-                            <div data-aos="fade-in" class="w-full hidden sm:block">
-                                <p class="text-sm leading-relaxed">Perfect in any room due to the fact the chair suits into any tone, so it might not be hard if you want to blend or mix and match with various interiors.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- CUSTOM MADE -->
-                    <div class="grid grid-cols-1 md:grid-cols-2" x-transition x-show="activeTab === 3">
-                        <div class="w-full">
-                            <h1 class="text-xl md:text-2xl font-bold uppercase">We give you the choice of customizing your own furniture.</h1>
-                        </div>
-                        <!--  -->
-                        <div class="w-full md:col-span-2 grid grid-cols-1 md:grid-cols-6 mt-20">
-                            <div class="w-full grid-cols-1 md:col-span-3">
-                                <p class="text-sm leading-relaxed">Fill out the enquiry form if you have any questions, want to do custom order, lets discuss, hit us and we will get back to you soon.</p>
-                                <form action="#" method="">
-                                    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-5 py-10">
-                                        <!-- FIRST NAME -->
-                                        <div class="w-full">
-                                            <label for="first_name" class="text-sm uppercase font-bold mb-2">First Name</label>
-                                            <input type="text" name="first_name" class="w-full placeholder:uppercase focus:outline-none transition-all duration-300 rounded-sm text-sm px-2 py-1 lg:py-1 border placeholder-gray-700 border-black text-black bg-transparent" placeholder="Enter your first name">
-                                        </div>
-                                        <!-- LAST NAME -->
-                                        <div class="w-full">
-                                            <label for="last_name" class="text-sm uppercase font-bold mb-2">Last Name</label>
-                                            <input type="text" name="last_name" class="w-full placeholder:uppercase focus:outline-none transition-all duration-300 rounded-sm text-sm px-2 py-1 lg:py-1 border placeholder-gray-700 border-black text-black bg-transparent" placeholder="Enter your last name">
-                                        </div>
-                                        <!-- EMAIL -->
-                                        <div class="w-full md:col-span-2">
-                                            <label for="email" class="text-sm uppercase font-bold mb-2">Email</label>
-                                            <input type="email" name="email" class="w-full placeholder:uppercase focus:outline-none transition-all duration-300 rounded-sm text-sm px-2 py-1 lg:py-1 border placeholder-gray-700 border-black text-black bg-transparent" placeholder="Enter email">
-                                        </div>
-                                        <!-- EMAIL -->
-                                        <div class="w-full md:col-span-2">
-                                            <label for="phone" class="text-sm uppercase font-bold mb-2">Phone</label>
-                                            <input type="text" name="phone" class="w-full placeholder:uppercase focus:outline-none transition-all duration-300 rounded-sm text-sm px-2 py-1 lg:py-1 border placeholder-gray-700 border-black text-black bg-transparent" placeholder="Enter your phone number">
-                                        </div>
-                                        <!-- MESSAGE -->
-                                        <div class="w-full md:col-span-2">
-                                            <label for="message" class="text-sm uppercase font-bold mb-2">Message</label>
-                                            <textarea rows="6" name="message" class="w-full placeholder:uppercase focus:outline-none transition-all duration-300 rounded-sm text-sm px-2 py-1 lg:py-1 border placeholder-gray-700 border-black text-black bg-transparent" placeholder="Ex: i want to order"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="w-full flex flex-col md:flex-row md:items-center justify-between">
-                                        <div class="w-auto flex items-center">
-                                            <input type="checkbox" name="newsletter" id="newsletter" />
-                                            <label for="newsletter" class="cursor-pointer ml-2 text-sm">Send me the Rangawak’s newsletter</label>
-                                        </div>
-                                        <button type="submit" class="w-24 mt-5 md:mt-0 py-1.5 transition-all duration-300 text-sm bg-copper-brown uppercase text-white rounded-sm">Send</button>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="w-full grid-cols-1 md:col-span-2 md:col-start-5 mt-10 md:mt-0">
-                                <p class="text-sm leading-relaxed">In order to make your living area more pleasant, we also provide furniture ideas for your rooms</p>
-                                <p class="text-sm leading-relaxed mt-5">Choose your own custome design that fits your home’s style and size.</p>
-                                <div class="mt-16">
-                                    <img src="/asset/img/product/custom-made.png" class="w-full" alt="CUSTOM MADE">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- CONTENT -->
-                    </div>
-                    <!-- TABLES -->
-                    <div x-transition x-show="activeTab === 4">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-5 md:gap-10">
-                            <!-- SINGLE PRODUCT -->
-                            <a href="#" class="w-full">
-                                <div id="product-img-wrapper" class="w-full relative overflow-hidden">
-                                    <img id="main-image" src="/asset/img/product/salo-table.png" class="w-full transition-all duration-300" alt="">
-                                    <!-- CONTENT -->
-                                    <div id="product-content" class="w-full absolute inset-0 transition-all duration-300 bg-gray-300 opacity-0 z-10">
-                                        <img src="/asset/img/product/salo/salo-cover-onhover.png" alt="">
-                                    </div>
-                                </div>
-                                <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Salo table</h1>
-                            </a>
-                            <!-- SINGLE PRODUCT -->
-                            <a href="#" class="w-full">
-                                <div id="product-img-wrapper" class="w-full relative overflow-hidden">
-                                    <img id="main-image" src="/asset/img/product/mano-table.png" class="w-full transition-all duration-300" alt="">
-                                    <!-- CONTENT -->
-                                    <div id="product-content" class="w-full absolute inset-0 transition-all duration-300 bg-gray-300 opacity-0 z-10">
-                                        <img src="/asset/img/product/mano/mano-cover-onhover.png" alt="">
-                                    </div>
-                                </div>
-                                <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Mano table</h1>
-                            </a>
-                        </div>
-                        <!-- BOTTOM TEXT -->
-                        <div class="w-full col-span-2 grid grid-cols-1 sm:grid-cols-2 pt-10 gap-5 md:gap-10">
-                            <div data-aos="fade-in" class="w-full">
-                                <p class="text-sm leading-relaxed">The work life would be easier if everyone had the proper size and height desk. Everyone can work comfortably and conveniently with the Rangawak’s desks. There are two variety to choose from, in addition to the shapes and sizes. <span class="sm:hidden">Rangawak’s desks are approved for office use and provide the long-term durability you need. Check out our desks storage for a completely integrated workspace.</span></p>
-                            </div>
-                            <div data-aos="fade-in" class="w-full hidden sm:block">
-                                <p class="text-sm leading-relaxed">Rangawak’s desks are approved for office use and provide the long-term durability you need. Check out our desks storage for a completely integrated workspace.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- SALE ITEMS -->
-                    <div class="w-full" x-transition x-show="activeTab === 5">
-                        <!-- SINGLE PRODUCT -->
-                        <a href="#" data-aos="fade-up">
-                            <div id="sale-product" class="w-full overflow-hidden">
-                                <img src="/asset/img/product/sale-11-11.png" class="transition-all duration-300 transform hover:scale-110" alt="">
-                            </div>
-                            <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Sale 11.11</h1>
-                        </a>
-                        <!-- SINGLE PRODUCT -->
-                        <a href="#" data-aos="fade-up">
-                            <div id="sale-product" class="w-full overflow-hidden">
-                                <img src="/asset/img/product/clearance-sale.png" class="transition-all duration-300 transform hover:scale-110" alt="">
-                            </div>
-                            <h1 class="text-xl md:text-2xl font-bold uppercase mt-5 mb-10">Clearance sale</h1>
-                        </a>
                         <!-- BOTTOM TEXT -->
                         <div class="w-full col-span-2 grid grid-cols-1 sm:grid-cols-2 pt-10 gap-5 md:gap-10">
                             <div data-aos="fade-in" class="w-full">
