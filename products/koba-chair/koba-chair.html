@@ -17,10 +17,10 @@
     <!-- START : HEADER -->
     <div class="w-full">
         <!-- START : NAVBAR -->
-        <nav class="fixed dark-content z-20 w-full px-5 transition-all duration-300">
+        <nav class="absolute z-20 w-full px-5 transition-all duration-300">
             <div class="w-full h-20 max-w-screen-custom mx-auto flex justify-between items-center transition-all duration-300">
                 <a href="/index.html">
-                    <img src="/asset/logo.png" class="w-20 md:w-28" alt="Rangawak LOGO">
+                    <img src="/asset/logo-black.png" class="w-20 md:w-28" alt="Rangawak LOGO">
                 </a>
                 <div class="w-full flex justify-end">
                     <!-- MENU ICON -->
@@ -31,7 +31,7 @@
                             <span class="iconify minus ml-2 hidden" data-icon="akar-icons:circle-minus"></span>
                         </button>
                         <!-- SUBMENU -->
-                        <ul id="menu-dropdown" class="z-30 transition-all duration-300 absolute top-full transform translate-y-2 right-0 lg:left-0 w-56 h-auto text-right flex flex-col justify-start lg:justify-end items-end lg:items-start">
+                        <ul id="menu-dropdown" class="z-30 transition-all duration-300 absolute top-full transform right-0 lg:left-0 w-56 h-auto text-right flex flex-col justify-start lg:justify-end items-end lg:items-start">
                             <li>
                                 <a href="/about.html" class="uppercase font-semibold hover:underline">About</a>
                             </li>
@@ -48,12 +48,12 @@
                                 <a href="/terms-of-order.html" class="uppercase font-semibold hover:underline">Terms of order</a>
                             </li>
                             <li class="mt-2 lg:hidden">
-                                <input type="text" id="search_product_two" class="flex w-56 text-black placeholder-black focus:outline-none hover:placeholder-slate-800 text-xs px-2 py-1 border border-black bg-transparent uppercase" placeholder="Search for products">
+                                <input type="text" id="search_product" class="flex w-56 text-black placeholder-black focus:outline-none hover:placeholder-slate-800 text-xs px-2 py-1 border border-black bg-transparent uppercase" placeholder="Search for products">
                             </li>
                         </ul>
                     </div>
                     <!-- SEARCH INPUT -->
-                    <input type="text" id="search_product" class="hidden lg:flex w-56 text-white placeholder-white focus:outline-none hover:placeholder-slate-100 text-xs px-2 py-1 border border-white bg-transparent uppercase" placeholder="Search for products">
+                    <input type="text" id="search_product" class="hidden lg:flex w-56 text-black placeholder-black focus:outline-none hover:placeholder-slate-800 text-xs px-2 py-1 border border-black bg-transparent uppercase" placeholder="Search for products">
                 </div>
             </div>
         </nav>
