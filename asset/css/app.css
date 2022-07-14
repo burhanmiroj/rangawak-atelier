@@ -2,7 +2,10 @@
   background-color: #dcd8d4;
 }
 .bg-copper-brown {
-  background-color: #867e5d;
+  background-color: #867e5d !important;
+}
+.bg-copper-brown:hover {
+  background-color: #686143 !important;
 }
 
 .text-wood-trush {
