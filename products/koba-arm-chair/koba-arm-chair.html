@@ -1,0 +1,395 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/asset/css/custom.css">
+    <link rel="stylesheet" href="/asset/css/app.css">
+    <style>
+        .single-product-swiper .swiper-button-prev, .single-product-swiper .swiper-button-next {
+            /* margin-top: -300px; */
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <!-- START : HEADER -->
+    <div class="w-full">
+        <!-- START : NAVBAR -->
+        <nav class="absolute z-20 w-full px-5 transition-all duration-300">
+            <div class="w-full h-20 max-w-screen-custom mx-auto flex justify-between items-center transition-all duration-300">
+                <a href="/index.html">
+                    <img src="/asset/logo-black.png" class="w-20 md:w-28" alt="Rangawak LOGO">
+                </a>
+                <div class="w-full flex justify-end">
+                    <!-- MENU ICON -->
+                    <div class="flex items-center lg:mr-10 relative">
+                        <button id="menu-btn" class="flex items-center">
+                            <span class="uppercase font-semibold transition-all duration-300">Menu</span>
+                            <span class="iconify plus ml-2" data-icon="ant-design:plus-circle-outlined"></span>
+                            <span class="iconify minus ml-2 hidden" data-icon="akar-icons:circle-minus"></span>
+                        </button>
+                        <!-- SUBMENU -->
+                        <ul id="menu-dropdown" class="z-30 transition-all duration-300 absolute top-full transform right-0 lg:left-0 w-56 h-auto text-right flex flex-col justify-start lg:justify-end items-end lg:items-start">
+                            <li>
+                                <a href="/about.html" class="uppercase font-semibold hover:underline">About</a>
+                            </li>
+                            <li>
+                                <a href="/material-and-finishes.html" class="uppercase font-semibold hover:underline">Material and finishes</a>
+                            </li>
+                            <li>
+                                <a href="/product.html" class="uppercase font-semibold hover:underline">Products</a>
+                            </li>
+                            <li>
+                                <a href="/get-in-touch.html" class="uppercase font-semibold hover:underline">Get in touch</a>
+                            </li>
+                            <li>
+                                <a href="/terms-of-order.html" class="uppercase font-semibold hover:underline">Terms of order</a>
+                            </li>
+                            <li class="mt-2 lg:hidden">
+                                <input type="text" id="search_product" class="flex w-56 text-black placeholder-black focus:outline-none hover:placeholder-slate-800 text-xs px-2 py-1 border border-black bg-transparent uppercase" placeholder="Search for products">
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- SEARCH INPUT -->
+                    <input type="text" id="search_product" class="hidden lg:flex w-56 text-black placeholder-black focus:outline-none hover:placeholder-slate-800 text-xs px-2 py-1 border border-black bg-transparent uppercase" placeholder="Search for products">
+                </div>
+            </div>
+        </nav>
+        <!-- END : NAVBAR -->
+        <!--  -->
+        <div class="w-full max-w-screen-lg mx-auto h-full flex flex-col justify-center px-5 pt-52 md:pt-44">
+            <!-- TOP -->
+            <div class="w-full">
+                <div class="w-full flex flex-col md:flex-row items-start md:items-center justify-between">
+                    <div data-aos="fade-up" class="pagination flex items-center text-copper-brown w-full">
+                        <a href="/index.html" class="flex items-center">
+                            <span class="font-bold text-sm uppercase hover:underline">Home</span>
+                        </a>
+                        <span class="iconify text-xs mx-2" data-icon="bi:chevron-right"></span>
+                        <a href="/products.html" class="flex items-center">
+                            <span class="font-bold text-sm uppercase hover:underline">Products</span>
+                        </a>
+                        <span class="iconify text-xs mx-2" data-icon="bi:chevron-right"></span>
+                        <a href="/products/chair.html" class="flex items-center">
+                            <span class="font-bold text-sm uppercase hover:underline">Chairs</span>
+                        </a>
+                        <span class="iconify text-xs mx-2" data-icon="bi:chevron-right"></span>
+                        <span class="flex items-center">
+                            <span class="font-bold text-sm uppercase">Koba</span>
+                        </span>
+                        <span class="iconify text-xs mx-2" data-icon="bi:chevron-right"></span>
+                    </div>
+                    <div x-data="{ openAuthForm : false }" class="mt-10 md:mt-0">
+                        <button @click="openAuthForm = true" data-aos="fade-up" data-aos-delay="100" id="link-with-icon" class="flex items-center justify-end md:w-64 font-bold text-copper-brown hover:underline">
+                            <span class="text-sm uppercase">Sign up to get promo</span>
+                            <span class="iconify text-xs ml-2 transition-all duration-300" data-icon="bi:chevron-right"></span>
+                        </button>
+                        <div x-show="openAuthForm" class="w-full h-screen fixed z-50 inset-0 bg-slate-900 bg-opacity-50 p-3 cursor-pointer grid place-items-center">
+                            <div x-show="openAuthForm" @click.away="openAuthForm = false" x-transition x-transition.duration.200ms 
+                            class="w-full bg-wood-trush cursor-default rounded-md mx-auto max-w-xl p-5 md:p-10 lg:p-16 relative">
+                                <!-- CLOSE BTN -->
+                                <button @click="openAuthForm = false" class="absolute top-0 right-0 m-5 md:m-10">
+                                    <span class="iconify text-white text-2xl md:text-4xl transition-all duration-300 transform hover:rotate-180" data-icon="bi:x-lg"></span>
+                                </button>
+                                <!-- CLOSE BTN -->
+                                <h1 class="text-xl lg:text-3xl uppercase font-semibold max-w-md leading-relaxed md:leading-loose">Sign up to get <br> latest promo</h1>
+                                <p class="text-sm py-5 md:py-10">Sign up for our newsletter and be the first to recieve the latest on products, promo, upcoming events of Rangawak.</p>
+                                <!-- FORM INPUT -->
+                                <form action="#" method="">
+                                    <!-- TOP INPUT -->
+                                    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-5 pb-5">
+                                        <div class="w-full">
+                                            <label for="first_name" class="text-sm uppercase font-bold text-copper-brown pb-1">First Name</label>
+                                            <input type="text" name="first_name" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent" placeholder="Enter your first name">
+                                        </div>
+                                        <div class="w-full">
+                                            <label for="last_name" class="text-sm uppercase font-bold text-copper-brown pb-1">Last Name</label>
+                                            <input type="text" name="last_name" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent" placeholder="Enter your last name">
+                                        </div>
+                                    </div>
+                                    <!-- BOTTOM INPUT -->
+                                    <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-5 items-end">
+                                        <div class="w-full col-span-1 lg:col-span-3">
+                                            <label for="email" class="text-sm uppercase font-bold text-copper-brown pb-1">Email</label>
+                                            <input type="email" name="email" class="w-full text-white focus:outline-none transition-all duration-300 rounded-sm placeholder-slate-50 hover:placeholder-slate-100 text-sm px-2 py-3 lg:py-1 border border-white bg-transparent" placeholder="Enter email">
+                                        </div>
+                                        <div class="w-full col-span-1">
+                                            <button type="submit" class="w-full py-1.5 transition-all duration-300 text-sm bg-gray-500 text-white hover:bg-gray-400 rounded-sm">Sign up</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- START : CATALOG PRODUCT -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-5 md:gap-10 my-20">
+                <div class="flex items-start space-x-5 md:space-x-0 md:space-y-2 md:flex-col col-span-1 pb-5 whitespace-nowrap overflow-x-scroll sm:overflow-x-hidden">
+                    <a href="/products.html" data-aos="fade-up" class="font-bold text-sm uppercase">
+                        View all
+                    </a>
+                    <a href="/products/chair.html" data-aos="fade-up" data-aos-delay="100" class="font-bold text-sm uppercase text-copper-brown">
+                        Chairs
+                    </a>
+                    <a href="/products/custom-made.html" data-aos="fade-up" data-aos-delay="200" class="font-bold text-sm uppercase">
+                        Custom made
+                    </a>
+                    <a href="/products/tables.html" data-aos="fade-up" data-aos-delay="300" class="font-bold text-sm uppercase">
+                        Tables
+                    </a>
+                    <a href="/products/sale-items.html" data-aos="fade-up" data-aos-delay="400" class="font-bold text-sm uppercase">
+                        Sale items
+                    </a>
+                </div>
+                <!-- CONTENT -->
+                <div class="w-full col-span-1 md:col-span-4">
+                    <!-- TOP CONTENT -->
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-5">
+                        <!-- LEFT : IMAGE -->
+                        <div class="w-full col-span-1 md:col-span-3 overflow-hidden relative">
+                            <!-- SWIPER TEXT CONTENT -->
+                            <div class="swiper-container single-product-swiper koba-swiper w-full h-full">
+                                <div data-aos="fade-in" class="swiper-wrapper">
+                                    <!-- START : SINGLE IMAGE -->
+                                    <div class="swiper-slide">
+                                        <div class="swiper-slide-inner">
+                                            <img src="/asset/img/product/koba/koba-chair-preview-one.png" alt="" class="swiper-lazy w-full h-full object-cover">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-slide-inner">
+                                            <img src="/asset/img/product/koba/koba-chair-preview-two.png" alt="" class="swiper-lazy w-full h-full object-cover">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-slide-inner">
+                                            <img src="/asset/img/product/koba/koba-chair-preview-three.png" alt="" class="swiper-lazy w-full h-full object-cover">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-slide-inner">
+                                            <img src="/asset/img/product/koba/koba-chair-preview-four.png" alt="" class="swiper-lazy w-full h-full object-cover">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-slide-inner">
+                                            <img src="/asset/img/product/koba/koba-chair-preview-five.png" alt="" class="swiper-lazy w-full h-full object-cover">
+                                        </div>
+                                    </div>
+                                    <!-- END : SINGLE IMAGE -->
+                                </div>
+                                <div class="swiper-pagination"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </div>
+                        <!-- RIGHT : TEXT -->
+                        <div class="w-full col-span-1 md:col-span-2 lg:pl-12">
+                            <!-- HEADING IMAGE -->
+                            <img data-aos="fade-up" src="/asset/img/product/koba/title.png" class="w-56" alt="KOBA">
+                            <!-- TEXT -->
+                            <p data-aos="fade-up" class="text-sm my-12 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur rem ea minus enim nobis porro molestiae, sunt hic eius ipsam incidunt recusandae saepe nesciunt corporis voluptas distinctio sequi suscipit exercitationem?</p>
+                            <h3 class="font-bold text-copper-brown uppercase">Materials used</h3>
+                            <!-- MATERIALS -->
+                            <div class="w-full grid grid-cols-2 gap-5 mt-6 mb-12">
+                                <div data-aos-delay="200" class="w-full">
+                                    <p class="text-sm md:text-xs mb-5">Surian Red Chedar</p>
+                                    <img class="w-full" src="/asset/img/product/surian-red-cheddar.png" alt="">
+                                </div>
+                                <div data-aos-delay="400" class="w-full">
+                                    <p class="text-sm md:text-xs mb-5">Magohany</p>
+                                    <img class="w-full" src="/asset/img/product/mahogany.png" alt="">
+                                </div>
+                            </div>
+                            <!-- DETAILS -->
+                            <h3 data-aos="fade-up" class="font-bold text-copper-brown uppercase">Product details</h3>
+                            <table data-aos="fade-up" class="mt-6 text-sm md:text-xs">
+                                <tr>
+                                    <td class="pr-6">Design</td>
+                                    <td>Rangawak</td>
+                                </tr>
+                                <tr>
+                                    <td class="pr-6">Year</td>
+                                    <td>2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="pr-6">Materials</td>
+                                    <td>Magohany & Surian Red Cheddar</td>
+                                </tr>
+                                <tr>
+                                    <td class="pr-6 align-top">Dimensions</td>
+                                    <td class="w-auto align-top flex space-x-3">
+                                        <!-- WH -->
+                                        <div>
+                                            <p class="flex items-center">
+                                                <span class="font-bold text-sm text-copper-brown mr-2">W</span>
+                                                <span>45CM</span>
+                                            </p>
+                                            <p class="flex items-center">
+                                                <span class="font-bold text-sm text-copper-brown mr-2">H</span>
+                                                <span>90CM</span>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p class="flex items-center">
+                                                <span class="font-bold text-sm text-copper-brown mr-2">D</span>
+                                                <span>50CM</span>
+                                            </p>
+                                            <p class="flex items-center">
+                                                <span class="font-bold text-sm text-copper-brown mr-2">Seat H</span>
+                                                <span>45CM</span>
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- 3 IMAGES -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20 mb-10">
+                        <!-- SINGLE IMAGE -->
+                        <img data-aos="fade-up" src="/asset/img/product/koba/koba-sketch-front.png" alt="">
+                        <!-- SINGLE IMAGE -->
+                        <img data-aos="fade-up" data-aos-delay="200" src="/asset/img/product/koba/koba-sketch-perpective.png" alt="">
+                        <!-- SINGLE IMAGE -->
+                        <img data-aos="fade-up" data-aos-delay="400" src="/asset/img/product/koba/koba-sketch-side.png" alt="">
+                    </div>
+                    <!-- LINKS -->
+                    <div class="w-full flex md:justify-end">
+                        <div class="flex flex-col">
+                            <a data-aos="fade-up" data-aos-delay="200" href="#" id="link-with-icon" class="inline-flex items-center text-copper-brown hover:underline mt-3">
+                                <span class="text-sm uppercase font-medium mr-10">Download online catalogue</span>
+                                <span class="iconify text-xs ml-2 transition-all duration-300" data-icon="bi:chevron-down"></span>
+                            </a>
+                            <a data-aos="fade-up" data-aos-delay="200" href="#" id="link-with-icon" class="inline-flex items-center text-copper-brown hover:underline mt-3">
+                                <span class="text-sm uppercase font-medium mr-10">Product sheet</span>
+                                <span class="iconify text-xs ml-2 transition-all duration-300" data-icon="bi:chevron-down"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- SINGLE IMAGES -->
+                    <img class="w-full mt-10" data-aos="fade-up" src="/asset/img/product/koba/koba-chair-full.png" alt="KOBA FULL">
+                    <div class="mt-16 mb-10">
+                        <span class="text-copper-brown font-medium text-sm uppercase">Enquiry</span>
+                    </div>
+                    <!-- FORMS -->
+                    <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-10">
+                        <!-- LEFT : TEXT -->
+                        <div class="w-full">
+                            <h1 class="text-xl md:text-2xl uppercase font-bold md:pr-20" style="line-height: 1.8;">Fill out the enquiry form if you have any questions, want to order, or if you would like a quote, and we will get back to you soon.</h1>
+                            <a data-aos="fade-up" data-aos-delay="200" href="#" id="link-with-icon" class="inline-flex items-center text-copper-brown hover:underline mt-3">
+                                <span class="text-sm uppercase font-medium">Check terms of order</span>
+                                <span class="iconify text-xs ml-2 transition-all duration-300" data-icon="bi:chevron-right"></span>
+                            </a>
+                        </div>
+                        <!-- RIGHT : FORM -->
+                        <div class="w-full">
+                            <form action="#" method="">
+                                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-5">
+                                    <!-- FIRST NAME -->
+                                    <div data-aos="fade-up" data-aos-delay="100" class="w-full">
+                                        <label for="first_name" class="text-xs uppercase font-semibold">First Name</label>
+                                        <input type="text" id="first_name" name="first_name" class="mt-2 w-full placeholder:uppercase focus:outline-none transition-all duration-300 rounded-sm text-xs px-2 py-1 lg:py-1 border placeholder-gray-700 border-black text-black bg-transparent" placeholder="Enter your first name">
+                                    </div>
+                                    <!-- LAST NAME -->
+                                    <div data-aos="fade-up" data-aos-delay="200" class="w-full">
+                                        <label for="last_name" class="text-xs uppercase font-semibold">Last Name</label>
+                                        <input type="text" id="last_name" name="last_name" class="mt-2 w-full placeholder:uppercase focus:outline-none transition-all duration-300 rounded-sm text-xs px-2 py-1 lg:py-1 border placeholder-gray-700 border-black text-black bg-transparent" placeholder="Enter your last name">
+                                    </div>
+                                    <!-- EMAIL -->
+                                    <div data-aos="fade-up" data-aos-delay="300" class="w-full md:col-span-2">
+                                        <label for="email" class="text-xs uppercase font-semibold">Email</label>
+                                        <input type="email" id="email" name="email" class="mt-2 w-full placeholder:uppercase focus:outline-none transition-all duration-300 rounded-sm text-xs px-2 py-1 lg:py-1 border placeholder-gray-700 border-black text-black bg-transparent" placeholder="Enter your email">
+                                    </div>
+                                    <!-- EMAIL -->
+                                    <div data-aos="fade-up" data-aos-delay="400" class="w-full md:col-span-2">
+                                        <label for="phone" class="text-xs uppercase font-semibold">Phone</label>
+                                        <input type="text" id="phone" name="phone" class="mt-2 w-full placeholder:uppercase focus:outline-none transition-all duration-300 rounded-sm text-xs px-2 py-1 lg:py-1 border placeholder-gray-700 border-black text-black bg-transparent" placeholder="Enter your phone number">
+                                    </div>
+                                    <!-- MESSAGE -->
+                                    <div data-aos="fade-up" data-aos-delay="500" class="w-full md:col-span-2">
+                                        <label for="message" class="text-xs uppercase font-semibold">Message</label>
+                                        <textarea rows="5" id="message" name="message" class="mt-2 w-full placeholder:uppercase focus:outline-none transition-all duration-300 rounded-sm text-xs px-2 py-1 lg:py-1 border placeholder-gray-700 border-black text-black bg-transparent" placeholder="Ex: i want to order"></textarea>
+                                    </div>
+                                </div>
+                                <div class="w-full flex flex-col md:flex-row md:items-center justify-between">
+                                    <div class="w-auto flex items-center">
+                                        <input type="checkbox" name="newsletter" id="newsletter" />
+                                        <label for="newsletter" class="cursor-pointer ml-2 text-sm">Send me the Rangawak’s newsletter</label>
+                                    </div>
+                                    <button type="submit" class="w-24 mt-5 md:mt-0 py-1.5 transition-all duration-300 text-sm bg-copper-brown uppercase text-white rounded-sm">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END : HEADER -->
+    
+    <!-- START : FOOTER -->
+    <footer class="w-full px-5">
+        <div class="w-full max-w-screen-custom mx-auto grid grid-cols-1 lg:grid-cols-3 py-10">
+            <div class="w-full col-span-1 lg:col-span-2 flex flex-col lg:flex-row">
+                <div class="w-full lg:w-1/2">
+                    <p class="font-bold text-sm pb-2 text-slate-900 uppercase">Workshop</p>
+                    <a href="#" class="text-sm">Jalan Lintas Batu Sangkar - Payakumbuh, <br /> Barulak, Tanah Datar, Sumatra Barat, 27821, ID</a>
+                </div>
+                <div class="w-full lg:w-1/2 mt-5 lg:mt-0">
+                    <a href="tel:6285278590997" class="text-sm flex">
+                        <span class="font-bold text-base mr-2">P</span>
+                        <span class="hover:text-slate-700">+62 (852) 7859 0997</span>
+                    </a>
+                    <a href="mailto:hello@rangawak-atelier.com" class="text-sm flex">
+                        <span class="font-bold text-base mr-2">E</span>
+                        <span class="hover:text-slate-700">hello@rangawak-atelier.com</span>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full col-span-1 lg:col-span-1 flex lg:justify-end pt-10 lg:pt-0">
+                <img src="/asset/footer-logo.png" class="w-32 h-fit" alt="">
+            </div>
+        </div>
+    </footer>
+    <!-- END : FOOTER -->
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/asset/js/nav.js"></script>
+    <script src="/asset/js/back-to-top-btn.js"></script>
+    <script>
+        AOS.init()
+
+        const imageSwiper = new Swiper('.koba-swiper', {
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            speed: 1000,
+            loop: true,
+            grabCursor: true, 
+            watchSlidesProgress: true,
+            autoplay: {
+                delay: 3000
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+    </script>
+</body>
+</html>
