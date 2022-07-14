@@ -80,6 +80,9 @@ body {
 #link-with-icon:hover .iconify {
     transform: translateX(5px);
 }
+#link-with-icon:hover .iconify[data-icon="bi:chevron-down"] {
+    transform: translateY(5px);
+}
 @media screen and (min-width: 992px) {
     .swiper-button-next::after, .swiper-button-prev::after {
         margin-top: 0;
