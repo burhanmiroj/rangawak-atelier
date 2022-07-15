@@ -92,9 +92,15 @@ body {
         margin-top: 0 !important;
     }
 }
+.homepage-header {
+    height: 800px;
+}
 @media screen and (min-width: 1024px) {
     header, section {
         max-height: 700px;
+    }
+    .homepage-header {
+        max-height: 1000px;
     }
     
 }
@@ -118,3 +124,9 @@ body {
 #sale-product:hover + h1 {
     text-decoration: underline;
 }
+/* HOMEPAGE */
+/* @media screen and (min-width: 992px) {
+    .homepage-header {
+        height: 1000px !important;
+    }
+} */
