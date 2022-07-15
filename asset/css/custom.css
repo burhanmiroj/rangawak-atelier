@@ -65,20 +65,20 @@ body {
     background-color: rgba(0, 0, 0, .1);
 }
 .swiper-button-next.homepage::after, .swiper-button-next::after {
-    margin-top: 550px;
-}
-.swiper-button-next.homepage::after {
     margin-right: 1rem;
     color: #ffffff;
     font-size: 1.8em;
 }
 .swiper-button-prev.homepage::after, .swiper-button-prev::after {
-    margin-left: 1rem;
-}
-.swiper-button-prev.homepage::after {
     margin-top: 550px;
     color: #ffffff;
     font-size: 1.8em;
+}
+.swiper-button-next.homepage::after {
+    margin-top: 550px;
+}
+.swiper-button-prev.homepage::after {
+    margin-left: 1rem;
 }
 
 #link-with-icon:hover .iconify {
