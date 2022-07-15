@@ -8,6 +8,7 @@ const headerLogo = navbar.querySelector('img')
 mobileMenuBtn.addEventListener('click', function() {
     mobileMenu.classList.remove('-translate-y-full')
 })
+
 // DARK CONTENT NAVBAR
 if (navbar.classList.contains('dark-content')) {        
     headerLogo.setAttribute('src', '/asset/logo-black.png')
