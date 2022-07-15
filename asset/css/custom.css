@@ -70,7 +70,7 @@ body {
     font-size: 1.8em;
 }
 .swiper-button-prev.homepage::after, .swiper-button-prev::after {
-    margin-top: 550px;
+    margin-left: 1rem;
     color: #ffffff;
     font-size: 1.8em;
 }
@@ -78,7 +78,7 @@ body {
     margin-top: 550px;
 }
 .swiper-button-prev.homepage::after {
-    margin-left: 1rem;
+    margin-top: 550px;
 }
 
 #link-with-icon:hover .iconify {
