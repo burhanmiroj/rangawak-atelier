@@ -11,9 +11,14 @@
     <link rel="stylesheet" href="/asset/css/custom.css">
     <link rel="stylesheet" href="/asset/css/app.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen" class="w-full h-screen bg-white fixed inset-0 z-50 transition-all duration-300 grid place-items-center">
+        <img src="/asset/logo-black.png" class="animate-bounce transition-all duration-300" id="loading-screen-img" alt="">
+    </div>
+    <!-- LOADING SCREEN -->
     <!-- START : HEADER -->
     <header class="w-full overflow-hidden relative" style="height: 768px;">
         <!-- START : NAVBAR -->
@@ -166,6 +171,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/asset/js/nav.js"></script>
     <script src="/asset/js/back-to-top-btn.js"></script>
+    <script src="/asset/js/loading.js"></script>
     <script>
         AOS.init()
         const materialAndFinishesComponent = new Swiper('.material-component', {
