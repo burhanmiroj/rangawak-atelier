@@ -64,13 +64,13 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, .1);
 }
-.swiper-button-next::after {
+.swiper-button-next.homepage::after {
     margin-top: 550px;
     margin-right: 1rem;
     color: #ffffff;
     font-size: 1.8em;
 }
-.swiper-button-prev::after {
+.swiper-button-prev.homepage::after {
     margin-left: 1rem;
     margin-top: 550px;
     color: #ffffff;
